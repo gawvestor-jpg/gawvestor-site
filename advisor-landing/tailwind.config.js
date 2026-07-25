@@ -1,0 +1,57 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          50: '#eef1f5',
+          100: '#dce2ea',
+          200: '#b9c5d5',
+          300: '#8fa2ba',
+          400: '#62789c',
+          500: '#435875',
+          600: '#31435b',
+          700: '#243347',
+          800: '#182333',
+          900: '#0f1622',
+          950: '#080c14',
+        },
+        gold: {
+          50: '#f8f3e8',
+          100: '#efe3c8',
+          200: '#e0c896',
+          300: '#cead6c',
+          400: '#bd9750',
+          500: '#a9822f',
+          600: '#8c6a26',
+          700: '#6f531f',
+          800: '#523c17',
+          900: '#362810',
+        },
+        cream: {
+          DEFAULT: '#faf8f4',
+          50: '#fefdfb',
+          100: '#faf8f4',
+          200: '#f4f0e7',
+        },
+      },
+      fontFamily: {
+        display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+        sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      spacing: {
+        'section-y': '6rem',
+        'section-y-lg': '8rem',
+      },
+      borderColor: {
+        DEFAULT: '#e5e0d4',
+      },
+      boxShadow: {
+        subtle: '0 1px 2px 0 rgba(15, 22, 34, 0.04), 0 1px 3px 0 rgba(15, 22, 34, 0.06)',
+        card: '0 2px 8px rgba(15, 22, 34, 0.06), 0 8px 24px rgba(15, 22, 34, 0.08)',
+        elevated: '0 8px 30px rgba(15, 22, 34, 0.12)',
+      },
+    },
+  },
+}
