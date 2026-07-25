@@ -4,9 +4,9 @@ export const SITE = {
 
 export const HERO = {
   name: 'Brandon Gaw',
-  title: 'Finance Content Creator & Markets Commentator',
+  title: 'Industrial Engineering Student & Finance Content Creator',
   valueProp:
-    "I break down markets, investing, and the economy into clear, jargon-free stories — helping a general audience understand what's actually moving, and why.",
+    "I break down markets, investing, technology supply chains, and personal finance into clear, jargon-free stories — helping young adults understand what's actually moving, and why.",
   ctaLabel: 'Schedule a Conversation',
 } as const
 
@@ -55,11 +55,10 @@ export const TRUST = {
     { value: '4+', label: 'Years creating content' },
   ],
   background: [
-    'Semiconductor industry experience',
-    'Degree from IE Business School',
+    'Industrial Engineering major with a Finance minor at Oregon State University',
+    'Experience in semiconductor supply chains & engineering',
   ],
-  philosophy:
-    'Education-focused, data-driven, no hype. I explain the reasoning behind market moves so you can form your own opinion — not chase a hot take.',
+  philosophy: 'Data-driven, educational, and practical finance commentary.',
 } as const
 
 export const CONTACT = {
