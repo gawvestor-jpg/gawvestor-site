@@ -3,8 +3,8 @@ export const SITE = {
 } as const
 
 export const HERO = {
-  name: 'Your Name',
-  title: 'Finance Content Creator / Markets Commentator',
+  name: 'Brandon Gaw',
+  title: 'Finance Content Creator & Markets Commentator',
   valueProp:
     "I break down markets, investing, and the economy into clear, jargon-free stories — helping a general audience understand what's actually moving, and why.",
   ctaLabel: 'Schedule a Conversation',
@@ -33,13 +33,13 @@ export const LINKS = [
     label: 'Media & Press',
     handle: 'Inquiries',
     description: 'Interviews, commentary, and press requests',
-    href: 'mailto:press@gawvestor.com',
+    href: 'mailto:hello@gawvestor.com',
   },
   {
     label: 'Brand Partnerships',
     handle: 'Work with me',
     description: 'Sponsorships and collaborations',
-    href: 'mailto:partnerships@gawvestor.com',
+    href: 'mailto:hello@gawvestor.com',
   },
   {
     label: 'Contact',
@@ -95,7 +95,7 @@ export const LEGAL = {
   reviewBanner:
     'PLACEHOLDER TEXT — should be reviewed by an attorney before publication, especially given social media/FTC disclosure requirements for sponsored content.',
   disclaimer: [
-    '[Name] is a content creator and is not a registered investment advisor, broker-dealer, or financial planner.',
+    'Brandon Gaw is a content creator and is not a registered investment advisor, broker-dealer, or financial planner.',
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
@@ -129,7 +129,7 @@ export const LEGAL = {
     },
     {
       heading: 'Limitation of liability',
-      body: 'To the fullest extent permitted by law, [Name] shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this site or reliance on any content published on it.',
+      body: 'To the fullest extent permitted by law, Brandon Gaw shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this site or reliance on any content published on it.',
     },
     {
       heading: 'Changes to these terms',

@@ -31,7 +31,7 @@ npm run lint     # run oxlint
 
 ## Before this goes live
 
-- Replace the `[Name]`, `[Date]`, and other bracketed placeholders in `src/config/content.ts` (`HERO`, `LEGAL`) with real values.
+- Replace the `[Date]` and other bracketed placeholders in `src/config/content.ts` (`LEGAL`) with real values.
 - Have an attorney review `/disclaimer`, `/privacy-policy`, and `/terms` — the banner on those pages is not decorative.
 - `src/services/leadCapture.ts` only logs to the console and returns a mock success. Wire it up to a real email provider (see `.env.example`) before relying on the contact form or newsletter signup.
 - Update the `og:url` / `og:image` / `twitter:image` values in `index.html` from the placeholder `https://gawvestor.com` domain to the real production domain once one is set.
