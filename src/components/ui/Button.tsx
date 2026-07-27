@@ -16,7 +16,7 @@ export function Button({
   const variants = {
     primary: 'bg-navy-900 text-cream-50 shadow-subtle hover:bg-navy-800 hover:shadow-card',
     secondary:
-      'border border-navy-900/15 bg-transparent text-navy-900 hover:border-navy-900/25 hover:bg-navy-900/5',
+      'border border-navy-900/15 bg-transparent text-navy-900 hover:border-gold-300 hover:bg-navy-900/5 hover:text-gold-700',
   }
   const ringOffset = onDark ? 'focus-visible:ring-offset-navy-950' : 'focus-visible:ring-offset-cream'
 

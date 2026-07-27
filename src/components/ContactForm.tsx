@@ -12,7 +12,6 @@ const initialForm: ContactFormData = {
   name: '',
   email: '',
   phone: '',
-  company: '',
   investmentInterests: '',
   message: '',
 }
@@ -90,21 +89,6 @@ export function ContactForm() {
             className={inputClass}
           />
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="company" className={labelClass}>
-          Company
-        </label>
-        <input
-          id="company"
-          name="company"
-          type="text"
-          autoComplete="organization"
-          value={form.company}
-          onChange={handleChange}
-          className={inputClass}
-        />
       </div>
 
       <div>

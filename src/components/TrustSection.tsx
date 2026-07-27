@@ -3,13 +3,16 @@ import { TRUST } from '../config/content'
 
 export function TrustSection() {
   return (
-    <section className="border-t border-navy-900/10 bg-white px-6 py-12 sm:py-section-y">
+    <section className="relative border-t border-navy-900/10 bg-white px-6 py-12 sm:py-section-y">
+      <div className="absolute inset-x-0 top-0 flex -translate-y-px justify-center">
+        <span className="h-px w-16 bg-gold-400/60" />
+      </div>
       <div className="mx-auto max-w-4xl">
         <FadeIn>
-          <dl className="grid grid-cols-2 gap-8 text-center">
+          <dl className="grid grid-cols-1 gap-8 text-center sm:grid-cols-3">
             {TRUST.stats.map((stat) => (
               <div key={stat.label}>
-                <dt className="font-display text-3xl font-medium text-gold-600 sm:text-4xl">
+                <dt className="font-display text-2xl font-medium text-gold-600 sm:text-3xl lg:text-4xl">
                   {stat.value}
                 </dt>
                 <dd className="mt-2 text-sm text-navy-500">{stat.label}</dd>
@@ -19,7 +22,7 @@ export function TrustSection() {
         </FadeIn>
 
         <FadeIn delayMs={80}>
-          <div className="mt-12 grid grid-cols-1 gap-10 border-t border-navy-900/10 pt-12 sm:mt-16 sm:grid-cols-2 sm:gap-12 sm:pt-16">
+          <div className="mt-12 grid grid-cols-1 gap-10 border-t border-navy-900/10 pt-12 sm:mt-16 sm:grid-cols-3 sm:gap-12 sm:pt-16">
             <div>
               <h3 className="font-display text-xl font-medium text-navy-950">Background</h3>
               <ul className="mt-4 space-y-2">
@@ -36,6 +39,14 @@ export function TrustSection() {
               </h3>
               <p className="mt-4 font-sans text-sm italic leading-relaxed text-navy-600">
                 {TRUST.philosophy}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-display text-xl font-medium text-navy-950">
+                {TRUST.directAccess.heading}
+              </h3>
+              <p className="mt-4 font-sans text-sm leading-relaxed text-navy-600">
+                {TRUST.directAccess.body}
               </p>
             </div>
           </div>

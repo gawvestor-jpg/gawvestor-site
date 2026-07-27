@@ -2,7 +2,6 @@ export type ContactFormData = {
   name: string
   email: string
   phone: string
-  company: string
   investmentInterests: string
   message: string
 }

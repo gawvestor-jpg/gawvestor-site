@@ -2,13 +2,34 @@ export const SITE = {
   name: 'Gawvestor',
 } as const
 
+// Update this as the TikTok following grows — referenced by TRUST.stats below.
+export const TIKTOK_FOLLOWERS = '13K+'
+
 export const HERO = {
-  name: 'Brandon Gaw',
+  name: 'Gawvestor',
   title: 'Industrial Engineering Student & Finance Content Creator',
   valueProp:
-    "I break down markets, investing, technology supply chains, and personal finance into clear, jargon-free stories — helping young adults understand what's actually moving, and why.",
+    "I'm a semiconductor engineer who breaks down investing for a general audience — turning what I see in the industry into insights anyone can use.",
   ctaLabel: 'Schedule a Conversation',
 } as const
+
+export const HERO_SOCIALS = [
+  {
+    label: 'TikTok',
+    handle: '@gawvestor',
+    href: 'https://www.tiktok.com/@gawvestor',
+  },
+  {
+    label: 'Instagram',
+    handle: '@gawvestor',
+    href: 'https://www.instagram.com/gawvestor',
+  },
+  {
+    label: 'YouTube',
+    handle: '@gawvestor',
+    href: 'https://www.youtube.com/@gawvestor',
+  },
+] as const
 
 export const LINKS = [
   {
@@ -18,22 +39,22 @@ export const LINKS = [
     href: 'https://www.tiktok.com/@gawvestor',
   },
   {
-    label: 'LinkedIn',
-    handle: 'Connect professionally',
-    description: 'Long-form takes and industry commentary',
-    href: 'https://www.linkedin.com/in/gawvestor',
+    label: 'Instagram',
+    handle: '@gawvestor',
+    description: 'Behind-the-scenes and short-form breakdowns',
+    href: 'https://www.instagram.com/gawvestor',
+  },
+  {
+    label: 'YouTube',
+    handle: '@gawvestor',
+    description: 'Long-form videos and deeper dives',
+    href: 'https://www.youtube.com/@gawvestor',
   },
   {
     label: 'Newsletter',
     handle: 'Subscribe',
     description: 'Weekly market recap, straight to your inbox',
     href: '#newsletter',
-  },
-  {
-    label: 'Media & Press',
-    handle: 'Inquiries',
-    description: 'Interviews, commentary, and press requests',
-    href: 'mailto:hello@gawvestor.com',
   },
   {
     label: 'Brand Partnerships',
@@ -51,14 +72,19 @@ export const LINKS = [
 
 export const TRUST = {
   stats: [
-    { value: '500K+', label: 'Combined followers' },
-    { value: '4+', label: 'Years creating content' },
+    { value: TIKTOK_FOLLOWERS, label: 'TikTok followers' },
+    { value: 'Fast-growing', label: 'Built in just 2 months' },
+    { value: 'Semiconductor Engineer', label: 'Real industry experience' },
   ],
   background: [
     'Industrial Engineering major with a Finance minor at Oregon State University',
     'Experience in semiconductor supply chains & engineering',
   ],
   philosophy: 'Data-driven, educational, and practical finance commentary.',
+  directAccess: {
+    heading: 'Direct access',
+    body: "This isn't a big anonymous account — I personally read and respond to comments and DMs. Ask me anything about the industry or investing.",
+  },
 } as const
 
 export const CONTACT = {
@@ -102,7 +128,7 @@ export const LEGAL = {
   privacy: [
     {
       heading: 'Information we collect',
-      body: 'When you fill out the contact form or subscribe to the newsletter on this site, we collect the information you provide directly — such as your name, email address, phone number, company, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
+      body: 'When you fill out the contact form or subscribe to the newsletter on this site, we collect the information you provide directly — such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
     },
     {
       heading: 'Cookies',

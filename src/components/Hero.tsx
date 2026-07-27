@@ -1,11 +1,15 @@
 import { Button } from './ui/Button'
 import { FadeIn } from './ui/FadeIn'
-import { HERO } from '../config/content'
+import { MarketGraphic } from './ui/MarketGraphic'
+import { HERO, HERO_SOCIALS } from '../config/content'
 
 export function Hero() {
   return (
-    <section className="bg-cream px-6 py-16 sm:py-24 lg:py-section-y-lg text-center">
-      <FadeIn className="mx-auto max-w-2xl">
+    <section className="relative overflow-hidden bg-cream px-6 py-16 sm:py-24 lg:py-section-y-lg text-center">
+      <MarketGraphic className="pointer-events-none absolute inset-x-0 top-0 z-0 h-40 w-full sm:h-56 lg:h-64" />
+
+      <FadeIn className="relative z-10 mx-auto max-w-2xl">
+        {/* Placeholder avatar — swap for a real headshot, e.g. src="/images/headshot.jpg" */}
         <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-navy-900/10 bg-navy-100 shadow-subtle sm:h-28 sm:w-28">
           <svg
             viewBox="0 0 24 24"
@@ -29,8 +33,24 @@ export function Hero() {
         <p className="mx-auto mt-6 max-w-xl font-sans text-base leading-relaxed text-navy-600 sm:text-lg">
           {HERO.valueProp}
         </p>
-        <div className="mt-10">
-          <Button>{HERO.ctaLabel}</Button>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {HERO_SOCIALS.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-navy-900/15 bg-white px-4 py-2.5 text-sm font-medium shadow-subtle transition-all duration-200 ease-out hover:border-gold-300 hover:shadow-card"
+            >
+              <span className="text-navy-950">{social.label}</span>
+              <span className="text-navy-500">{social.handle}</span>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <Button variant="secondary">{HERO.ctaLabel}</Button>
         </div>
       </FadeIn>
     </section>
