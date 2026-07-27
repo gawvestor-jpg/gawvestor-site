@@ -33,8 +33,16 @@ npm run lint     # run oxlint
 
 - Replace the `[Date]` and other bracketed placeholders in `src/config/content.ts` (`LEGAL`) with real values.
 - Have an attorney review `/disclaimer`, `/privacy-policy`, and `/terms` — the banner on those pages is not decorative.
-- `src/services/leadCapture.ts` only logs to the console and returns a mock success. Wire it up to a real email provider (see `.env.example`) before relying on the contact form or newsletter signup.
+- The contact form is wired to Formspree (see below); newsletter signup in `src/services/leadCapture.ts` still only logs to the console and returns a mock success — wire it up to a real email provider (see `.env.example`) before relying on it.
 - Update the `og:url` / `og:image` / `twitter:image` values in `index.html` from the placeholder `https://gawvestor.com` domain to the real production domain once one is set.
+
+## Contact form (Formspree)
+
+`submitContactForm` in `src/services/leadCapture.ts` posts directly to a Formspree endpoint — no backend needed. The endpoint is a public form action URL, not a secret, so it's safe to hardcode or expose via a `VITE_`-prefixed env var.
+
+- Default endpoint is hardcoded in `leadCapture.ts`.
+- To point at a different Formspree form (e.g. a new project, a second inbox), set `VITE_FORMSPREE_ENDPOINT` in a local `.env` file (see `.env.example`) to your new form's endpoint from https://formspree.io — no code changes needed.
+- Formspree emails the form's connected inbox on each submission and, on the free tier, requires confirming the first submission via a link sent to that inbox before it starts forwarding automatically.
 
 ## Deploying to Cloudflare Pages
 

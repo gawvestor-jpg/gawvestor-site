@@ -4,7 +4,10 @@ import { CONTACT } from '../config/content'
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y">
+    <section
+      id="contact"
+      className="relative scroll-mt-20 border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y"
+    >
       <div className="absolute inset-x-0 top-0 flex -translate-y-px justify-center">
         <span className="h-px w-16 bg-gold-400/60" />
       </div>

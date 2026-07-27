@@ -4,7 +4,10 @@ import { TOOLS } from '../config/content'
 
 export function ToolsSection() {
   return (
-    <section id="tools" className="border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y">
+    <section
+      id="tools"
+      className="scroll-mt-20 border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y"
+    >
       <div className="mx-auto max-w-4xl">
         <FadeIn>
           <h2 className="text-center font-display text-2xl font-medium text-cream-50 sm:text-3xl">

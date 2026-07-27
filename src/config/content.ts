@@ -8,7 +8,8 @@ export const TIKTOK_FOLLOWERS = '13K+'
 export const HERO = {
   name: 'Gawvestor',
   title: 'Engineer, Finance Content Creator',
-  valueProp: `Engineering intern at Intel by day, breaking down markets for ${TIKTOK_FOLLOWERS} followers by night.`,
+  valueProp:
+    "I'm a 22 year old engineer working inside the semiconductor industry at Intel, and I spend my free time breaking down what's happening in markets, especially in tech and semis.",
   ctaLabel: 'Get in Touch',
 } as const
 
@@ -43,8 +44,15 @@ export const SECONDARY_LINKS = [
   {
     label: 'Brand Partnerships',
     handle: 'Work with me',
-    description: 'Sponsorships and collaborations',
-    href: 'mailto:hello@gawvestor.com',
+    description:
+      "I work with a limited number of brands each quarter on sponsored content, affiliate partnerships, and collaborations relevant to finance, investing, and tech. Share some details below and I'll follow up if it's a good fit.",
+    href: '#contact',
+  },
+  {
+    label: 'Career Questions',
+    handle: 'Ask me anything',
+    description: "Studying finance or breaking into the industry? Happy to help.",
+    href: 'mailto:hello@gawvestor.com?subject=Career%20Question',
   },
   {
     label: 'Contact',
@@ -69,6 +77,12 @@ export const TOOLS = [
     href: 'https://www.webull.com/',
   },
 ] as const
+
+export const ABOUT = {
+  heading: 'How I Got Into Investing',
+  lead: 'My journey into investing started at 18, with a growth mindset and a lot of curiosity.',
+  body: "That passion took off as I absorbed everything I could about investing, stocks, and the markets in general, and it's what continues to drive the content I share today.",
+} as const
 
 export const TRUST = {
   stats: [
@@ -108,6 +122,8 @@ export const NEWSLETTER = {
 export const FOOTER = {
   email: 'hello@gawvestor.com',
   copyrightName: 'Gawvestor',
+  disclaimerNote:
+    "Content on this site is for educational and entertainment purposes only and isn't financial advice.",
   links: [
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms', href: '/terms' },

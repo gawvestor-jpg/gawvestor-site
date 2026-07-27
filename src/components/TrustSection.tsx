@@ -10,9 +10,15 @@ export function TrustSection() {
       <div className="mx-auto max-w-4xl">
         <FadeIn>
           <dl className="grid grid-cols-1 gap-8 text-center sm:grid-cols-3">
-            {TRUST.stats.map((stat) => (
+            {TRUST.stats.map((stat, index) => (
               <div key={stat.label}>
-                <dt className="font-display text-2xl font-medium text-gold-400 sm:text-3xl lg:text-4xl">
+                <dt
+                  className={
+                    index === 0
+                      ? 'font-display text-4xl font-medium text-gold-400 sm:text-5xl lg:text-6xl'
+                      : 'font-display text-2xl font-medium text-gold-400 sm:text-3xl lg:text-4xl'
+                  }
+                >
                   {stat.value}
                 </dt>
                 <dd className="mt-2 text-sm text-navy-300">{stat.label}</dd>

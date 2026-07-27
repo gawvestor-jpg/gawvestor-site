@@ -12,14 +12,14 @@ export function LinkHub() {
           </h2>
         </FadeIn>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-12">
           {SOCIAL_LINKS.map((link, index) => (
-            <FadeIn key={link.label} delayMs={index * 60}>
+            <FadeIn key={link.label} delayMs={index * 60} className="sm:col-span-4">
               <a
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex flex-col items-start gap-2 rounded-sm border border-white/5 bg-navy-800 p-6 text-left shadow-card transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-teal-400/40 hover:bg-navy-700 hover:shadow-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+                className="group flex h-full flex-col items-start gap-2 rounded-sm border border-white/5 bg-navy-800 p-6 text-left shadow-card transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-teal-400/40 hover:bg-navy-700 hover:shadow-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
               >
                 <span className="font-display text-xl font-medium text-cream-50">
                   {link.label}
@@ -33,9 +33,9 @@ export function LinkHub() {
           ))}
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-12">
           {SECONDARY_LINKS.map((link, index) => (
-            <FadeIn key={link.label} delayMs={index * 60}>
+            <FadeIn key={link.label} delayMs={index * 60} className="sm:col-span-3">
               <Card
                 eyebrow={link.label}
                 title={link.handle}
@@ -43,6 +43,7 @@ export function LinkHub() {
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="h-full"
               />
             </FadeIn>
           ))}

@@ -40,6 +40,16 @@ export function Footer() {
           <p className="mt-6 text-xs text-navy-300">
             &copy; {year} {FOOTER.copyrightName}. All rights reserved.
           </p>
+          <p className="mt-3 text-[11px] leading-relaxed text-navy-300">
+            {FOOTER.disclaimerNote}{' '}
+            <Link
+              to="/disclaimer"
+              className="underline decoration-navy-400/50 underline-offset-2 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+            >
+              Read the full disclaimer
+            </Link>
+            .
+          </p>
         </div>
       </FadeIn>
     </footer>
