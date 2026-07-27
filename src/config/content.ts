@@ -2,40 +2,21 @@ export const SITE = {
   name: 'Gawvestor',
 } as const
 
-// Update this as the TikTok following grows — referenced by TRUST.stats below.
+// Update this as the TikTok following grows. Referenced everywhere the follower count appears.
 export const TIKTOK_FOLLOWERS = '13K+'
 
 export const HERO = {
   name: 'Gawvestor',
-  title: 'Industrial Engineering Student & Finance Content Creator',
-  valueProp:
-    "I'm a semiconductor engineer who breaks down investing for a general audience — turning what I see in the industry into insights anyone can use.",
-  ctaLabel: 'Schedule a Conversation',
+  title: 'Engineer, Finance Content Creator',
+  valueProp: `Engineering intern at Intel by day, breaking down markets for ${TIKTOK_FOLLOWERS} followers by night.`,
+  ctaLabel: 'Get in Touch',
 } as const
 
-export const HERO_SOCIALS = [
+export const SOCIAL_LINKS = [
   {
     label: 'TikTok',
     handle: '@gawvestor',
-    href: 'https://www.tiktok.com/@gawvestor',
-  },
-  {
-    label: 'Instagram',
-    handle: '@gawvestor',
-    href: 'https://www.instagram.com/gawvestor',
-  },
-  {
-    label: 'YouTube',
-    handle: '@gawvestor',
-    href: 'https://www.youtube.com/@gawvestor',
-  },
-] as const
-
-export const LINKS = [
-  {
-    label: 'TikTok',
-    handle: '@gawvestor',
-    description: 'Daily market breakdowns and explainers',
+    description: 'Stock picks and investing explainers',
     href: 'https://www.tiktok.com/@gawvestor',
   },
   {
@@ -50,11 +31,14 @@ export const LINKS = [
     description: 'Long-form videos and deeper dives',
     href: 'https://www.youtube.com/@gawvestor',
   },
+] as const
+
+export const SECONDARY_LINKS = [
   {
-    label: 'Newsletter',
-    handle: 'Subscribe',
-    description: 'Weekly market recap, straight to your inbox',
-    href: '#newsletter',
+    label: 'Tools I Use',
+    handle: 'See the list',
+    description: 'Platforms and tools I actually use for investing and content',
+    href: '#tools',
   },
   {
     label: 'Brand Partnerships',
@@ -67,6 +51,22 @@ export const LINKS = [
     handle: 'Say hello',
     description: 'General questions and everything else',
     href: '#contact',
+  },
+] as const
+
+// Placeholder links. Swap for real affiliate links once set up.
+export const TOOLS = [
+  {
+    name: 'TradingView',
+    cta: 'Charting platform',
+    description: 'Real-time charts and market analysis I use to track stocks and trends.',
+    href: 'https://www.tradingview.com/',
+  },
+  {
+    name: 'Webull',
+    cta: 'Trading platform',
+    description: 'Commission-free platform I use to track and execute trades.',
+    href: 'https://www.webull.com/',
   },
 ] as const
 
@@ -83,7 +83,7 @@ export const TRUST = {
   philosophy: 'Data-driven, educational, and practical finance commentary.',
   directAccess: {
     heading: 'Direct access',
-    body: "This isn't a big anonymous account — I personally read and respond to comments and DMs. Ask me anything about the industry or investing.",
+    body: "This isn't a big anonymous account. I personally read and respond to comments and DMs. Ask me anything about the industry or investing.",
   },
 } as const
 
@@ -118,7 +118,7 @@ export const FOOTER = {
 export const LEGAL = {
   lastUpdated: '[Date]',
   reviewBanner:
-    'PLACEHOLDER TEXT — should be reviewed by an attorney before publication, especially given social media/FTC disclosure requirements for sponsored content.',
+    'PLACEHOLDER TEXT. Should be reviewed by an attorney before publication, especially given social media/FTC disclosure requirements for sponsored content.',
   disclaimer: [
     'Brandon Gaw is a content creator and is not a registered investment advisor, broker-dealer, or financial planner.',
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
@@ -128,7 +128,7 @@ export const LEGAL = {
   privacy: [
     {
       heading: 'Information we collect',
-      body: 'When you fill out the contact form or subscribe to the newsletter on this site, we collect the information you provide directly — such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
+      body: 'When you fill out the contact form or subscribe to the newsletter on this site, we collect the information you provide directly, such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
     },
     {
       heading: 'Cookies',

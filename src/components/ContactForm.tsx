@@ -4,9 +4,9 @@ import { submitContactForm, type ContactFormData } from '../services/leadCapture
 import { CONTACT } from '../config/content'
 
 const inputClass =
-  'mt-2 w-full rounded-sm border border-navy-900/15 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400/40'
+  'mt-2 w-full rounded-sm border border-white/15 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400/40'
 
-const labelClass = 'block text-sm font-medium text-navy-700'
+const labelClass = 'block text-sm font-medium text-navy-200'
 
 const initialForm: ContactFormData = {
   name: '',
@@ -131,10 +131,10 @@ export function ContactForm() {
           {status === 'submitting' ? 'Sending…' : 'Send message'}
         </Button>
         {status === 'success' && (
-          <p className="text-sm text-gold-600">Thanks — I'll get back to you soon.</p>
+          <p className="text-sm text-gold-400">Thanks, I'll get back to you soon.</p>
         )}
         {status === 'error' && (
-          <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+          <p className="text-sm text-red-400">Something went wrong. Please try again.</p>
         )}
       </div>
     </form>

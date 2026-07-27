@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-navy-900/10 bg-navy-950 px-6 py-12 text-center">
+    <footer className="border-t border-white/10 bg-navy-950 px-6 py-12 text-center">
       <FadeIn>
         <div id="newsletter" className="mx-auto max-w-md">
           <h2 className="font-display text-xl font-medium text-cream-50">{NEWSLETTER.heading}</h2>
@@ -21,7 +21,7 @@ export function Footer() {
           <p className="font-sans text-sm text-cream-200">
             <a
               href={`mailto:${FOOTER.email}`}
-              className="rounded-sm transition-colors duration-200 hover:text-gold-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              className="rounded-sm transition-colors duration-200 hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
             >
               {FOOTER.email}
             </a>
@@ -31,7 +31,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 to={link.href}
-                className="rounded-sm text-xs tracking-wide text-navy-300 transition-colors duration-200 hover:text-gold-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+                className="rounded-sm text-xs tracking-wide text-navy-300 transition-colors duration-200 hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
               >
                 {link.label}
               </Link>
