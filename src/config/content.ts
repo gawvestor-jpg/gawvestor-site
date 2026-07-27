@@ -9,7 +9,7 @@ export const HERO = {
   name: 'Gawvestor',
   title: 'Engineer, Finance Content Creator',
   valueProp:
-    "I'm a 22 year old engineer working inside the semiconductor industry at Intel, and I spend my free time breaking down what's happening in markets, especially in tech and semis.",
+    "I'm 22, and I work as an engineer in the semiconductor industry at Intel. Chips are what power basically everything in tech right now, and being inside that world gives me a different lens on the market than most finance creators have. I post breakdowns and stock picks across TikTok, Instagram, and YouTube, take a look below and see what fits.",
   ctaLabel: 'Get in Touch',
 } as const
 

@@ -32,7 +32,9 @@ export function Hero() {
         </p>
 
         <div className="mt-8">
-          <Button variant="secondary">{HERO.ctaLabel}</Button>
+          <Button variant="secondary" href="#contact">
+            {HERO.ctaLabel}
+          </Button>
         </div>
       </FadeIn>
     </section>

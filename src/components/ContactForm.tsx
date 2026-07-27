@@ -21,6 +21,7 @@ type Status = 'idle' | 'submitting' | 'success' | 'error'
 export function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialForm)
   const [status, setStatus] = useState<Status>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   function handleChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -38,6 +39,7 @@ export function ContactForm() {
       setForm(initialForm)
     } else {
       setStatus('error')
+      setErrorMessage(result.error)
     }
   }
 
@@ -134,7 +136,7 @@ export function ContactForm() {
           <p className="text-sm text-gold-400">Thanks, I'll get back to you soon.</p>
         )}
         {status === 'error' && (
-          <p className="text-sm text-red-400">Something went wrong. Please try again.</p>
+          <p className="text-sm text-red-400">{errorMessage || 'Something went wrong. Please try again.'}</p>
         )}
       </div>
     </form>
