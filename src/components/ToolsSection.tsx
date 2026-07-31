@@ -1,32 +1,43 @@
+import type { ComponentType } from 'react'
 import { Card } from './ui/Card'
 import { FadeIn } from './ui/FadeIn'
-import { TOOLS } from '../config/content'
+import { ChartIcon, BoltIcon } from './ui/icons'
+import { TOOLS, TOOLS_DISCLOSURE } from '../config/content'
+
+const TOOL_ICONS: Record<string, ComponentType<{ className?: string }>> = {
+  TradingView: ChartIcon,
+  Webull: BoltIcon,
+}
 
 export function ToolsSection() {
   return (
-    <section
-      id="tools"
-      className="scroll-mt-20 border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y"
-    >
-      <div className="mx-auto max-w-4xl">
+    <section id="tools" className="border-t border-navy-100 bg-cream-50 px-5 py-6 sm:py-8">
+      <div className="mx-auto max-w-md">
         <FadeIn>
-          <h2 className="text-center font-display text-2xl font-medium text-cream-50 sm:text-3xl">
+          <h2 className="text-center font-display text-xl font-medium text-navy-900 sm:text-2xl">
             Tools I use
           </h2>
+          <p className="mx-auto mt-2 max-w-sm text-center text-xs leading-relaxed text-navy-500">
+            {TOOLS_DISCLOSURE}
+          </p>
         </FadeIn>
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2">
-          {TOOLS.map((tool, index) => (
-            <FadeIn key={tool.name} delayMs={index * 60}>
-              <Card
-                eyebrow={tool.name}
-                title={tool.cta}
-                description={tool.description}
-                href={tool.href}
-                target="_blank"
-                rel="noreferrer"
-              />
-            </FadeIn>
-          ))}
+        <div className="mt-4 flex flex-col gap-2.5 sm:mt-5">
+          {TOOLS.map((tool, index) => {
+            const Icon = TOOL_ICONS[tool.name]
+            return (
+              <FadeIn key={tool.name} delayMs={index * 60}>
+                <Card
+                  icon={Icon && <Icon className="h-5 w-5" />}
+                  title={tool.name}
+                  label={tool.cta}
+                  description={tool.description}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              </FadeIn>
+            )
+          })}
         </div>
       </div>
     </section>

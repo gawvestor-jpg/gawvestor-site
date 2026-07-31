@@ -2,15 +2,8 @@ export const SITE = {
   name: 'Gawvestor',
 } as const
 
-// Update this as the TikTok following grows. Referenced everywhere the follower count appears.
-export const TIKTOK_FOLLOWERS = '13K+'
-
 export const HERO = {
   name: 'Gawvestor',
-  title: 'Engineer, Finance Content Creator',
-  valueProp:
-    "I'm 22, and I work as an engineer in the semiconductor industry at Intel. Chips are what power basically everything in tech right now, and being inside that world gives me a different lens on the market than most finance creators have. I post breakdowns and stock picks across TikTok, Instagram, and YouTube, take a look below and see what fits.",
-  ctaLabel: 'Get in Touch',
 } as const
 
 export const SOCIAL_LINKS = [
@@ -62,13 +55,12 @@ export const SECONDARY_LINKS = [
   },
 ] as const
 
-// Placeholder links. Swap for real affiliate links once set up.
 export const TOOLS = [
   {
     name: 'TradingView',
     cta: 'Charting platform',
     description: 'Real-time charts and market analysis I use to track stocks and trends.',
-    href: 'https://www.tradingview.com/',
+    href: 'https://www.tradingview.com/?aff_id=168754',
   },
   {
     name: 'Webull',
@@ -78,18 +70,10 @@ export const TOOLS = [
   },
 ] as const
 
-export const ABOUT = {
-  heading: 'How I Got Into Investing',
-  lead: 'My journey into investing started at 18, with a growth mindset and a lot of curiosity.',
-  body: "That passion took off as I absorbed everything I could about investing, stocks, and the markets in general, and it's what continues to drive the content I share today.",
-} as const
+export const TOOLS_DISCLOSURE =
+  'Some of these are affiliate links. I may earn a commission if you sign up through them, at no extra cost to you.'
 
 export const TRUST = {
-  stats: [
-    { value: TIKTOK_FOLLOWERS, label: 'TikTok followers' },
-    { value: 'Fast-growing', label: 'Built in just 2 months' },
-    { value: 'Semiconductor Engineer', label: 'Real industry experience' },
-  ],
   background: [
     'Industrial Engineering major with a Finance minor at Oregon State University',
     'Experience in semiconductor supply chains & engineering',

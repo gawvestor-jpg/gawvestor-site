@@ -15,13 +15,12 @@ type ButtonAsLink = AnchorHTMLAttributes<HTMLAnchorElement> & {
 type ButtonProps = ButtonAsButton | ButtonAsLink
 
 const base =
-  'inline-block rounded-sm px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-subtle'
+  'inline-block rounded-full px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-subtle'
 
 const variants: Record<Variant, string> = {
-  primary:
-    'border border-gold-400/50 bg-gold-400/5 text-gold-400 hover:border-gold-400 hover:bg-gold-400/15 hover:text-gold-300',
+  primary: 'border border-green-700 bg-green-700 text-white hover:border-green-800 hover:bg-green-800',
   secondary:
-    'border border-white/15 bg-transparent text-cream-100 hover:border-teal-400 hover:bg-white/5 hover:text-teal-300',
+    'border border-green-200 bg-transparent text-green-800 hover:border-green-400 hover:bg-green-50',
 }
 
 export function Button({ variant = 'primary', className = '', href, ...props }: ButtonProps) {

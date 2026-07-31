@@ -4,21 +4,18 @@ import { CONTACT } from '../config/content'
 
 export function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="relative scroll-mt-20 border-t border-white/10 bg-navy-950 px-6 py-12 sm:py-section-y"
-    >
+    <section id="contact" className="relative border-t border-navy-100 bg-white px-5 py-6 sm:py-8">
       <div className="absolute inset-x-0 top-0 flex -translate-y-px justify-center">
-        <span className="h-px w-16 bg-gold-400/60" />
+        <span className="h-px w-16 bg-green-400/60" />
       </div>
-      <FadeIn className="mx-auto max-w-xl">
+      <FadeIn className="mx-auto max-w-md">
         <div className="text-center">
-          <h2 className="font-display text-2xl font-medium text-cream-50 sm:text-3xl">
+          <h2 className="font-display text-xl font-medium text-navy-900 sm:text-2xl">
             {CONTACT.heading}
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-base text-navy-300">{CONTACT.subheading}</p>
+          <p className="mx-auto mt-2 text-sm text-navy-500">{CONTACT.subheading}</p>
         </div>
-        <div className="mt-10">
+        <div className="mt-5">
           <ContactForm />
         </div>
       </FadeIn>

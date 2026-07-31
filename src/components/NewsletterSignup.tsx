@@ -34,17 +34,17 @@ export function NewsletterSignup() {
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-sm border border-white/15 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400/40"
+          className="w-full rounded-full border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30"
         />
         <Button type="submit" disabled={status === 'submitting'} className="shrink-0">
           {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
         </Button>
       </div>
       {status === 'success' && (
-        <p className="mt-3 text-sm text-gold-400">Subscribed. Welcome aboard.</p>
+        <p className="mt-3 text-sm text-green-700">Subscribed. Welcome aboard.</p>
       )}
       {status === 'error' && (
-        <p className="mt-3 text-sm text-red-400">Something went wrong. Please try again.</p>
+        <p className="mt-3 text-sm text-red-600">Something went wrong. Please try again.</p>
       )}
     </form>
   )

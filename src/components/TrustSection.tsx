@@ -3,55 +3,33 @@ import { TRUST } from '../config/content'
 
 export function TrustSection() {
   return (
-    <section className="relative border-t border-white/10 bg-navy-900 px-6 py-12 sm:py-section-y">
-      <div className="absolute inset-x-0 top-0 flex -translate-y-px justify-center">
-        <span className="h-px w-16 bg-gold-400/60" />
-      </div>
-      <div className="mx-auto max-w-4xl">
+    <section className="relative border-t border-navy-100 bg-cream-50 px-5 py-6 sm:py-8">
+      <div className="mx-auto max-w-md">
         <FadeIn>
-          <dl className="grid grid-cols-1 gap-8 text-center sm:grid-cols-3">
-            {TRUST.stats.map((stat, index) => (
-              <div key={stat.label}>
-                <dt
-                  className={
-                    index === 0
-                      ? 'font-display text-4xl font-medium text-gold-400 sm:text-5xl lg:text-6xl'
-                      : 'font-display text-2xl font-medium text-gold-400 sm:text-3xl lg:text-4xl'
-                  }
-                >
-                  {stat.value}
-                </dt>
-                <dd className="mt-2 text-sm text-navy-300">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
-        </FadeIn>
-
-        <FadeIn delayMs={80}>
-          <div className="mt-12 grid grid-cols-1 gap-10 border-t border-white/10 pt-12 sm:mt-16 sm:grid-cols-3 sm:gap-12 sm:pt-16">
-            <div>
-              <h3 className="font-display text-xl font-medium text-cream-50">Background</h3>
-              <ul className="mt-4 space-y-2">
+          <div className="flex flex-col divide-y divide-navy-100 rounded-2xl border border-navy-100 bg-white p-5 shadow-subtle">
+            <div className="pb-4">
+              <h3 className="font-display text-base font-medium text-navy-900">Background</h3>
+              <ul className="mt-2 space-y-1">
                 {TRUST.background.map((item) => (
-                  <li key={item} className="text-sm leading-relaxed text-navy-300">
+                  <li key={item} className="text-xs leading-relaxed text-navy-500">
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-display text-xl font-medium text-cream-50">
+            <div className="py-4">
+              <h3 className="font-display text-base font-medium text-navy-900">
                 Content philosophy
               </h3>
-              <p className="mt-4 font-sans text-sm italic leading-relaxed text-navy-300">
+              <p className="mt-2 font-sans text-xs italic leading-relaxed text-navy-500">
                 {TRUST.philosophy}
               </p>
             </div>
-            <div>
-              <h3 className="font-display text-xl font-medium text-teal-400">
+            <div className="pt-4">
+              <h3 className="font-display text-base font-medium text-green-700">
                 {TRUST.directAccess.heading}
               </h3>
-              <p className="mt-4 font-sans text-sm leading-relaxed text-navy-300">
+              <p className="mt-2 font-sans text-xs leading-relaxed text-navy-500">
                 {TRUST.directAccess.body}
               </p>
             </div>
