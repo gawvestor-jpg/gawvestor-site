@@ -1,34 +1,56 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
 import { ChevronRightIcon } from './icons'
 
-type CardProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+export const CARD_BASE_CLASS =
+  'group flex items-center gap-4 rounded-2xl px-5 py-4 text-left shadow-subtle transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-colors motion-reduce:hover:translate-y-0'
+
+export const CARD_STYLE = {
+  card: 'border border-green-200 bg-green-100 hover:border-green-400 hover:bg-green-200/70',
+  icon: 'bg-white text-green-700 group-hover:text-green-800',
+  title: 'text-navy-900',
+  label: 'text-green-700',
+  description: 'text-navy-600',
+  chevron: 'text-navy-400 group-hover:text-green-600',
+}
+
+type CardBodyProps = {
   icon?: ReactNode
+  iconClassName?: string
   title: string
   label: string
   description: string
 }
 
-export function Card({ icon, title, label, description, className = '', ...props }: CardProps) {
+export function CardBody({ icon, iconClassName, title, label, description }: CardBodyProps) {
   return (
-    <a
-      className={`group flex items-center gap-3 rounded-full border border-navy-100 bg-white px-4 py-3 text-left shadow-subtle transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-50/60 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white motion-reduce:transition-colors motion-reduce:hover:translate-y-0 ${className}`}
-      {...props}
-    >
+    <>
       {icon && (
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700 transition-colors group-hover:bg-green-100 group-hover:text-green-800">
+        <span
+          className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full transition-colors ${iconClassName ?? CARD_STYLE.icon}`}
+        >
           {icon}
         </span>
       )}
       <span className="min-w-0 flex-1">
-        <span className="flex items-baseline gap-2">
-          <span className="font-display text-base font-medium text-navy-900">{title}</span>
-          <span className="shrink-0 text-xs font-medium tracking-wide text-green-700">{label}</span>
+        <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <span className={`font-display text-lg font-medium ${CARD_STYLE.title}`}>{title}</span>
+          <span className={`text-xs font-medium tracking-wide ${CARD_STYLE.label}`}>{label}</span>
         </span>
-        <span className="mt-0.5 block truncate text-xs leading-relaxed text-navy-500">
+        <span className={`mt-0.5 line-clamp-2 text-sm leading-snug ${CARD_STYLE.description}`}>
           {description}
         </span>
       </span>
-      <ChevronRightIcon className="h-4 w-4 shrink-0 text-navy-300 transition-colors group-hover:text-green-600" />
+    </>
+  )
+}
+
+type CardProps = AnchorHTMLAttributes<HTMLAnchorElement> & CardBodyProps
+
+export function Card({ icon, iconClassName, title, label, description, className = '', ...props }: CardProps) {
+  return (
+    <a className={`${CARD_BASE_CLASS} ${CARD_STYLE.card} ${className}`} {...props}>
+      <CardBody icon={icon} iconClassName={iconClassName} title={title} label={label} description={description} />
+      <ChevronRightIcon className={`h-5 w-5 shrink-0 transition-colors ${CARD_STYLE.chevron}`} />
     </a>
   )
 }

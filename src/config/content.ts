@@ -10,80 +10,61 @@ export const SOCIAL_LINKS = [
   {
     label: 'TikTok',
     handle: '@gawvestor',
+    hook: 'Stock picks & explainers',
     description: 'Stock picks and investing explainers',
     href: 'https://www.tiktok.com/@gawvestor',
   },
   {
     label: 'Instagram',
     handle: '@gawvestor',
+    hook: 'Behind-the-scenes content',
     description: 'Behind-the-scenes and short-form breakdowns',
     href: 'https://www.instagram.com/gawvestor',
   },
   {
     label: 'YouTube',
     handle: '@gawvestor',
+    hook: 'In-depth video breakdowns',
     description: 'Long-form videos and deeper dives',
     href: 'https://www.youtube.com/@gawvestor',
   },
 ] as const
 
-export const SECONDARY_LINKS = [
+export const DISCORD_LINK = {
+  label: 'Discord',
+  handle: 'Chat live with investors',
+  description: 'Talk markets, ask questions, and connect with other investors.',
+  href: '#',
+} as const
+
+export const HELP_LINKS = [
   {
-    label: 'Tools I Use',
-    handle: 'See the list',
-    description: 'Platforms and tools I actually use for investing and content',
-    href: '#tools',
+    label: 'Contact',
+    hook: 'General questions',
+    description: 'I personally respond, reach out with anything.',
   },
   {
     label: 'Brand Partnerships',
-    handle: 'Work with me',
+    hook: 'Brand & Outreach',
     description:
-      "I work with a limited number of brands each quarter on sponsored content, affiliate partnerships, and collaborations relevant to finance, investing, and tech. Share some details below and I'll follow up if it's a good fit.",
-    href: '#contact',
-  },
-  {
-    label: 'Career Questions',
-    handle: 'Ask me anything',
-    description: "Studying finance or breaking into the industry? Happy to help.",
-    href: 'mailto:hello@gawvestor.com?subject=Career%20Question',
-  },
-  {
-    label: 'Contact',
-    handle: 'Say hello',
-    description: 'General questions and everything else',
-    href: '#contact',
+      'Sponsored content, affiliate partnerships, and collaborations relevant to finance, investing, and tech.',
   },
 ] as const
 
 export const TOOLS = [
   {
-    name: 'TradingView',
-    cta: 'Charting platform',
-    description: 'Real-time charts and market analysis I use to track stocks and trends.',
-    href: 'https://www.tradingview.com/?aff_id=168754',
-  },
-  {
     name: 'Webull',
-    cta: 'Trading platform',
+    cta: 'Commission-free trades',
     description: 'Commission-free platform I use to track and execute trades.',
     href: 'https://www.webull.com/',
   },
-] as const
-
-export const TOOLS_DISCLOSURE =
-  'Some of these are affiliate links. I may earn a commission if you sign up through them, at no extra cost to you.'
-
-export const TRUST = {
-  background: [
-    'Industrial Engineering major with a Finance minor at Oregon State University',
-    'Experience in semiconductor supply chains & engineering',
-  ],
-  philosophy: 'Data-driven, educational, and practical finance commentary.',
-  directAccess: {
-    heading: 'Direct access',
-    body: "This isn't a big anonymous account. I personally read and respond to comments and DMs. Ask me anything about the industry or investing.",
+  {
+    name: 'TradingView',
+    cta: 'Free real-time charts',
+    description: 'Real-time charts and market analysis I use to track stocks and trends.',
+    href: 'https://www.tradingview.com/?aff_id=168754',
   },
-} as const
+] as const
 
 export const CONTACT = {
   heading: 'Get in touch',
@@ -100,7 +81,6 @@ export const CONTACT = {
 
 export const NEWSLETTER = {
   heading: 'Stay in the loop',
-  subheading: 'Weekly market recap, straight to your inbox. No spam, unsubscribe anytime.',
 } as const
 
 export const FOOTER = {

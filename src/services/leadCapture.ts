@@ -6,7 +6,15 @@ export type ContactFormData = {
   message: string
 }
 
+export type ContactSource = 'contact' | 'brand-partnerships'
+
+const CONTACT_SUBJECTS: Record<ContactSource, (name: string) => string> = {
+  contact: (name) => `MEMBER - New message from ${name}`,
+  'brand-partnerships': (name) => `BRAND - New inquiry from ${name}`,
+}
+
 export type NewsletterData = {
+  firstName: string
   email: string
 }
 
@@ -26,7 +34,10 @@ function mockSubmit(): Promise<LeadCaptureResult> {
   })
 }
 
-export async function submitContactForm(data: ContactFormData): Promise<LeadCaptureResult> {
+export async function submitContactForm(
+  data: ContactFormData,
+  source: ContactSource,
+): Promise<LeadCaptureResult> {
   try {
     const response = await fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
@@ -41,7 +52,7 @@ export async function submitContactForm(data: ContactFormData): Promise<LeadCapt
         'Investment Interests': data.investmentInterests,
         message: data.message,
         _replyto: data.email,
-        _subject: `New contact form message from ${data.name}`,
+        _subject: CONTACT_SUBJECTS[source](data.name),
       }),
     })
 

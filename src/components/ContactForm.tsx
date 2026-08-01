@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { Button } from './ui/Button'
-import { submitContactForm, type ContactFormData } from '../services/leadCapture'
+import { submitContactForm, type ContactFormData, type ContactSource } from '../services/leadCapture'
 import { CONTACT } from '../config/content'
 
 const inputClass =
@@ -21,7 +21,11 @@ const initialForm: ContactFormData = {
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-export function ContactForm() {
+type ContactFormProps = {
+  source: ContactSource
+}
+
+export function ContactForm({ source }: ContactFormProps) {
   const [form, setForm] = useState<ContactFormData>(initialForm)
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -36,7 +40,7 @@ export function ContactForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     setStatus('submitting')
-    const result = await submitContactForm(form)
+    const result = await submitContactForm(form, source)
     if (result.success) {
       setStatus('success')
       setForm(initialForm)

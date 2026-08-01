@@ -4,16 +4,21 @@ import { submitNewsletterSignup } from '../services/leadCapture'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
+const inputClass =
+  'w-full rounded-full border border-white bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30'
+
 export function NewsletterSignup() {
+  const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     setStatus('submitting')
-    const result = await submitNewsletterSignup({ email })
+    const result = await submitNewsletterSignup({ firstName, email })
     if (result.success) {
       setStatus('success')
+      setFirstName('')
       setEmail('')
     } else {
       setStatus('error')
@@ -21,30 +26,40 @@ export function NewsletterSignup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <label htmlFor="newsletter-email" className="sr-only">
-          Email address
-        </label>
-        <input
-          id="newsletter-email"
-          type="email"
-          autoComplete="email"
-          required
-          placeholder="you@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-full border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30"
-        />
-        <Button type="submit" disabled={status === 'submitting'} className="shrink-0">
-          {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
-        </Button>
-      </div>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
+      <label htmlFor="newsletter-first-name" className="sr-only">
+        First name
+      </label>
+      <input
+        id="newsletter-first-name"
+        type="text"
+        autoComplete="given-name"
+        placeholder="First name"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        className={inputClass}
+      />
+      <label htmlFor="newsletter-email" className="sr-only">
+        Email address
+      </label>
+      <input
+        id="newsletter-email"
+        type="email"
+        autoComplete="email"
+        required
+        placeholder="you@example.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className={inputClass}
+      />
+      <Button type="submit" disabled={status === 'submitting'} className="w-full">
+        {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
+      </Button>
       {status === 'success' && (
-        <p className="mt-3 text-sm text-green-700">Subscribed. Welcome aboard.</p>
+        <p className="text-sm text-green-800">Subscribed. Welcome aboard.</p>
       )}
       {status === 'error' && (
-        <p className="mt-3 text-sm text-red-600">Something went wrong. Please try again.</p>
+        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
       )}
     </form>
   )

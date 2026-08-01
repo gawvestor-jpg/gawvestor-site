@@ -4,8 +4,18 @@ type IconProps = { className?: string }
 
 export function TikTokIcon({ className = '' }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M13.5 2h2.7c.2 1.6 1.4 3 3.1 3.3v2.7c-1.4 0-2.7-.4-3.8-1.2v6.6c0 3-2.5 5.4-5.5 5.4S4.5 15.4 4.5 12.4c0-2.8 2.1-5.1 4.8-5.4v2.8a2.7 2.7 0 1 0 1.9 2.6V2h2.3z" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M14 3.5v10.8a3.7 3.7 0 1 1-3.7-3.7c.3 0 .6 0 .9.1" />
+      <path d="M14 3.5c.3 2.4 2.1 4.2 4.5 4.5" />
     </svg>
   )
 }
@@ -31,9 +41,26 @@ export function InstagramIcon({ className = '' }: IconProps) {
 
 export function YouTubeIcon({ className = '' }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M10.5 9v6l5-3z" fill="currentColor" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="5" width="20" height="14" rx="4" />
+      <path d="M10.3 9.2v5.6l4.8-2.8z" />
+    </svg>
+  )
+}
+
+export function DiscordIcon({ className = '' }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.5 5.5c-1.2-.6-2.5-1-3.9-1.2l-.2.4c1.3.3 2.5.8 3.6 1.5-2.9-1.4-6.3-1.4-9.2 0 1.1-.7 2.3-1.2 3.6-1.5l-.2-.4c-1.4.2-2.7.6-3.9 1.2C4.9 8 4 11.2 4.3 14.3c1.4 1.1 2.9 1.8 4.5 2.2l.6-1c-.8-.3-1.5-.7-2.2-1.1a8 8 0 0 0 9.6 0c-.7.4-1.4.8-2.2 1.1l.6 1c1.6-.4 3.1-1.1 4.5-2.2.4-3.4-.5-6.5-2.2-8.8zM9.5 12.8c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6zm5 0c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6z" />
     </svg>
   )
 }
@@ -61,19 +88,19 @@ export function ChevronRightIcon({ className = '' }: IconProps) {
   )
 }
 
-export function WrenchIcon({ className = '' }: IconProps) {
+export function ChevronDownIcon({ className = '' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
       aria-hidden="true"
     >
-      <path d="M14.7 6.3a3.5 3.5 0 0 0-4.6 4.2L4 16.6V20h3.4l6.1-6.1a3.5 3.5 0 0 0 4.2-4.6l-2.6 2.6-2-2z" />
+      <path d="M5 9l7 7 7-7" />
     </svg>
   )
 }
@@ -93,24 +120,6 @@ export function BriefcaseIcon({ className = '' }: IconProps) {
       <rect x="3" y="8" width="18" height="11" rx="2" />
       <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
       <path d="M3 13h18" />
-    </svg>
-  )
-}
-
-export function ChatIcon({ className = '' }: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M4 5h16v11H9l-4 4V5z" />
-      <path d="M8.5 9.5h7M8.5 12.5h4.5" />
     </svg>
   )
 }
