@@ -11,13 +11,6 @@ type LegalLayoutProps = {
 export function LegalLayout({ title, children }: LegalLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <div
-        role="alert"
-        className="border-b border-amber-300 bg-amber-50 px-6 py-3 text-center text-xs font-medium leading-relaxed text-amber-800"
-      >
-        {LEGAL.reviewBanner}
-      </div>
-
       <header className="px-6 py-6">
         <Link
           to="/"

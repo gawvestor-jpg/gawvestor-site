@@ -33,7 +33,8 @@ export const SOCIAL_LINKS = [
 export const BOOKING = {
   label: '1:1 Call',
   handle: '30 min · $100',
-  description: 'Book time to talk stocks, portfolio questions, or how to get started.',
+  description:
+    'Book time to talk stocks, portfolio questions, or how to get started. Educational conversation only — not personalized investment advice.',
   href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
 } as const
 
@@ -62,7 +63,8 @@ export const TOOLS = [
   {
     name: 'TradingView',
     cta: 'Free real-time charts',
-    description: 'Real-time charts and market analysis I use to track stocks and trends.',
+    description:
+      'Real-time charts and market analysis I use to track stocks and trends. Affiliate link — I may earn a commission if you sign up.',
     href: 'https://www.tradingview.com/?aff_id=168754',
   },
 ] as const
@@ -97,14 +99,18 @@ export const FOOTER = {
 } as const
 
 export const LEGAL = {
-  lastUpdated: '[Date]',
-  reviewBanner:
-    'PLACEHOLDER TEXT. Should be reviewed by an attorney before publication, especially given social media/FTC disclosure requirements for sponsored content.',
+  // NOTE (internal, not shown on site): this copy has not been reviewed by an
+  // attorney. It's reasonable boilerplate for an educational finance creator,
+  // but get it reviewed once paid 1:1 calls and brand deals are running —
+  // especially the FTC/SEC/FINRA-facing disclosure language.
+  lastUpdated: 'August 12, 2026',
   disclaimer: [
     'Brandon Gaw is a content creator and is not a registered investment advisor, broker-dealer, or financial planner.',
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
+    'Paid 1:1 calls booked through this site are educational conversations only. They do not constitute personalized investment advice and are not a substitute for consulting a licensed financial professional.',
+    'Some links on this site (such as TradingView) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
   ],
   privacy: [
     {
