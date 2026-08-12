@@ -1,11 +1,10 @@
 import type { ComponentType } from 'react'
 import { Card } from './ui/Card'
-import { DiscordIcon, ChartIcon, BoltIcon } from './ui/icons'
-import { DISCORD_LINK, TOOLS } from '../config/content'
+import { DiscordIcon, ChartIcon, CalendarIcon } from './ui/icons'
+import { BOOKING, DISCORD_LINK, TOOLS } from '../config/content'
 
 const TOOL_ICONS: Record<string, ComponentType<{ className?: string }>> = {
   TradingView: ChartIcon,
-  Webull: BoltIcon,
 }
 
 export function CommunitySection() {
@@ -16,6 +15,15 @@ export function CommunitySection() {
           Community and Tools
         </h2>
         <div className="mt-4 flex flex-col gap-2.5 sm:mt-5">
+          <Card
+            icon={<CalendarIcon className="h-5 w-5" />}
+            title={BOOKING.label}
+            label={BOOKING.handle}
+            description={BOOKING.description}
+            href={BOOKING.href}
+            target="_blank"
+            rel="noreferrer"
+          />
           <Card
             icon={<DiscordIcon className="h-5 w-5" />}
             title={DISCORD_LINK.label}

@@ -31,14 +31,15 @@ export const SOCIAL_LINKS = [
 ] as const
 
 export const BOOKING = {
-  label: 'Book a 1:1 Call',
-  cta: '30 min · $100',
+  label: '1:1 Call',
+  handle: '30 min · $100',
+  description: 'Book time to talk stocks, portfolio questions, or how to get started.',
   href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
 } as const
 
 export const DISCORD_LINK = {
   label: 'Discord',
-  handle: 'Chat live with investors',
+  handle: 'Coming soon',
   description: 'Talk markets, ask questions, and connect with other investors.',
   href: '#',
 } as const
@@ -58,12 +59,6 @@ export const HELP_LINKS = [
 ] as const
 
 export const TOOLS = [
-  {
-    name: 'Webull',
-    cta: 'Commission-free trades',
-    description: 'Commission-free platform I use to track and execute trades.',
-    href: 'https://www.webull.com/',
-  },
   {
     name: 'TradingView',
     cta: 'Free real-time charts',

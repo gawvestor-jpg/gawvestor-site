@@ -1,6 +1,5 @@
 import { SOCIAL_ICONS } from './ui/icons'
-import { Button } from './ui/Button'
-import { BOOKING, HERO, SOCIAL_LINKS } from '../config/content'
+import { HERO, SOCIAL_LINKS } from '../config/content'
 import headshot from '../assets/headshot.jpg'
 
 export function Hero() {
@@ -39,12 +38,6 @@ export function Hero() {
               </a>
             )
           })}
-        </div>
-
-        <div className="mt-5">
-          <Button href={BOOKING.href} target="_blank" rel="noreferrer">
-            {BOOKING.label} — {BOOKING.cta}
-          </Button>
         </div>
       </div>
     </section>
