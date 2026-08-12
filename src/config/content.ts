@@ -30,6 +30,12 @@ export const SOCIAL_LINKS = [
   },
 ] as const
 
+export const BOOKING = {
+  label: 'Book a 1:1 Call',
+  cta: '30 min · $100',
+  href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
+} as const
+
 export const DISCORD_LINK = {
   label: 'Discord',
   handle: 'Chat live with investors',
