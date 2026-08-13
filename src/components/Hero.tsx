@@ -36,7 +36,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={link.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-200 text-navy-600 shadow-subtle transition-colors hover:border-green-400 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sky-200 bg-sky-100 text-sky-800 shadow-subtle transition-colors hover:border-sky-300 hover:bg-sky-200 hover:text-sky-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 {Icon && <Icon className="h-[18px] w-[18px]" />}
               </a>
