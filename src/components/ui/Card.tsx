@@ -13,32 +13,17 @@ export const CARD_STYLE = {
   chevron: 'text-navy-500 group-hover:text-green-700',
 }
 
-// Per-tile accents so the stack reads as distinct cards at a glance. All stay
-// inside the sage/mint family; only the icon circle carries a real colour shift.
-export const CARD_TONES = {
-  mint: {
-    card: 'border border-green-200 bg-green-100 hover:border-green-300 hover:bg-green-200',
-    icon: 'bg-white text-green-700 group-hover:text-green-800',
-  },
-  softGreen: {
-    card: 'border border-green-200 bg-green-50 hover:border-green-300 hover:bg-green-100',
-    icon: 'bg-green-200 text-green-800 group-hover:bg-green-300',
-  },
-  blue: {
-    card: 'border border-green-200 bg-green-100 hover:border-green-400 hover:bg-green-200/70',
-    icon: 'bg-sky-100 text-sky-800 group-hover:bg-sky-200',
-  },
-  warm: {
-    card: 'border border-cream-200 bg-green-50 hover:border-green-300 hover:bg-green-100',
-    icon: 'bg-cream-200 text-green-800 group-hover:bg-cream-100',
-  },
-  deepGreen: {
-    card: 'border border-green-300 bg-green-200 hover:border-green-400 hover:bg-green-300',
-    icon: 'bg-green-700 text-white group-hover:bg-green-800',
-  },
+// Every tile shares one card background; only the icon circle varies, so the
+// stack still reads as distinct rows while scrolling.
+export const CARD_ACCENTS = {
+  green: 'bg-white text-green-700 group-hover:text-green-800',
+  blue: 'bg-sky-100 text-sky-800 group-hover:bg-sky-200',
+  indigo: 'bg-indigo-100 text-indigo-700 group-hover:bg-indigo-200',
+  warm: 'bg-cream-200 text-green-800 group-hover:bg-cream-100',
+  deepGreen: 'bg-green-700 text-white group-hover:bg-green-800',
 } as const
 
-export type CardTone = keyof typeof CARD_TONES
+export type CardAccent = keyof typeof CARD_ACCENTS
 
 type CardBodyProps = {
   icon?: ReactNode
@@ -54,8 +39,10 @@ export function CardBody({ icon, iconClassName, title, label, description }: Car
   return (
     <>
       {icon && (
+        // iconClassName carries the plate shape as well as its colours, so a
+        // section can swap the circle for a rounded square.
         <span
-          className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full transition-colors ${iconClassName ?? CARD_STYLE.icon}`}
+          className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden transition-colors ${iconClassName ?? `rounded-full ${CARD_STYLE.icon}`}`}
         >
           {icon}
         </span>
@@ -77,7 +64,7 @@ export function CardBody({ icon, iconClassName, title, label, description }: Car
 
 type CardProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   CardBodyProps & {
-    tone?: CardTone
+    accent?: CardAccent
   }
 
 export function Card({
@@ -86,17 +73,15 @@ export function Card({
   title,
   label,
   description,
-  tone = 'mint',
+  accent = 'green',
   className = '',
   ...props
 }: CardProps) {
-  const { card, icon: iconTone } = CARD_TONES[tone]
-
   return (
-    <a className={`${CARD_BASE_CLASS} ${card} ${className}`} {...props}>
+    <a className={`${CARD_BASE_CLASS} ${CARD_STYLE.card} ${className}`} {...props}>
       <CardBody
         icon={icon}
-        iconClassName={iconClassName ?? iconTone}
+        iconClassName={iconClassName ?? `rounded-full ${CARD_ACCENTS[accent]}`}
         title={title}
         label={label}
         description={description}

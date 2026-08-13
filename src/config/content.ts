@@ -39,26 +39,13 @@ export const BOOKING = {
   href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
 } as const
 
-export const NEWSLETTER_LINK = {
-  label: 'Newsletter',
-  handle: 'Free',
-  description: "Market notes and what I'm watching, sent straight to your inbox.",
-  href: '#newsletter',
-} as const
-
-export const DISCORD_LINK = {
-  label: 'Discord',
-  handle: 'Coming soon',
-  description: 'Talk markets, ask questions, and connect with other investors.',
-  href: '#',
-} as const
-
-// Third-party paid community with an affiliate deal — not my own Discord. The
-// affiliate disclosure now lives only in the description, so keep it in that copy.
+// The only Discord tile on the site. It points at the Wealth Collective
+// affiliate community, not a server we run, so the affiliate disclosure in the
+// description is the sole disclosure — keep it in that copy.
 // TODO: swap href for the real Wealth Collective affiliate URL. Until then it's
 // left as '#' so the tile renders without pointing anywhere wrong.
 export const AFFILIATE_COMMUNITY = {
-  label: 'Investing Community',
+  label: 'Discord',
   description:
     "A trading community I'm part of — trade alerts, market chat, and analysis. (Paid membership, affiliate link.)",
   href: '#',
@@ -102,10 +89,6 @@ export const CONTACT = {
   ],
 } as const
 
-export const NEWSLETTER = {
-  heading: 'Stay in the loop',
-} as const
-
 export const FOOTER = {
   email: 'hello@gawvestor.com',
   copyrightName: 'Gawvestor',
@@ -136,7 +119,7 @@ export const LEGAL = {
   privacy: [
     {
       heading: 'Information we collect',
-      body: 'When you fill out the contact form or subscribe to the newsletter on this site, we collect the information you provide directly, such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
+      body: 'When you fill out the contact form on this site, we collect the information you provide directly, such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
     },
     {
       heading: 'Cookies',
@@ -144,7 +127,7 @@ export const LEGAL = {
     },
     {
       heading: 'How we use your information',
-      body: 'Information submitted through forms on this site is used solely to respond to your inquiry, send the newsletter you signed up for, or evaluate media and partnership requests. We do not sell your personal information to third parties.',
+      body: 'Information submitted through forms on this site is used solely to respond to your inquiry or evaluate media and partnership requests. We do not sell your personal information to third parties.',
     },
     {
       heading: 'Data requests & contact',

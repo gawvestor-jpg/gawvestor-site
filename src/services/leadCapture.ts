@@ -13,11 +13,6 @@ const CONTACT_SUBJECTS: Record<ContactSource, (name: string) => string> = {
   'brand-partnerships': (name) => `BRAND - New inquiry from ${name}`,
 }
 
-export type NewsletterData = {
-  firstName: string
-  email: string
-}
-
 export type LeadCaptureResult = { success: true } | { success: false; error: string }
 
 // Formspree form endpoint for the contact form. This is a public form action URL
@@ -25,14 +20,6 @@ export type LeadCaptureResult = { success: true } | { success: false; error: str
 // VITE_FORMSPREE_ENDPOINT in .env to point at a different Formspree form.
 const FORMSPREE_ENDPOINT =
   import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mwvgaqdq'
-
-// Placeholder for a future email-provider integration (see .env.example).
-// Simulates network latency so calling UIs can exercise their pending state.
-function mockSubmit(): Promise<LeadCaptureResult> {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({ success: true }), 400)
-  })
-}
 
 export async function submitContactForm(
   data: ContactFormData,
@@ -66,9 +53,4 @@ export async function submitContactForm(
   } catch {
     return { success: false, error: 'Network error. Please try again.' }
   }
-}
-
-export async function submitNewsletterSignup(data: NewsletterData): Promise<LeadCaptureResult> {
-  console.log('[leadCapture] newsletter signup', data)
-  return mockSubmit()
 }

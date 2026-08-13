@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { ComponentType } from 'react'
 import { ContactForm } from './ContactForm'
-import { CARD_BASE_CLASS, CARD_STYLE, CardBody } from './ui/Card'
+import { CardBody } from './ui/Card'
 import { ChevronDownIcon, MailIcon, BriefcaseIcon } from './ui/icons'
 import { CONTACT, HELP_LINKS } from '../config/content'
 import type { ContactSource } from '../services/leadCapture'
@@ -15,6 +15,14 @@ const HELP_SOURCES: Record<string, ContactSource> = {
   Contact: 'contact',
   'Brand Partnerships': 'brand-partnerships',
 }
+
+// Deliberately unlike the Community tiles above: white ground instead of green,
+// a squarer radius, a left accent rule, and a rounded-square icon plate rather
+// than a circle — so the two sections don't read as one long list.
+const HELP_CARD_CLASS =
+  'group flex w-full min-h-[4.5rem] items-center gap-4 rounded-lg border border-navy-100 border-l-4 border-l-green-600 bg-white px-5 py-4 text-left shadow-subtle transition-all duration-200 ease-out hover:border-navy-200 hover:border-l-green-700 hover:bg-cream-50 hover:shadow-tile focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white'
+
+const HELP_ICON_CLASS = 'rounded-lg bg-cream-200 text-green-800 group-hover:bg-cream-100'
 
 export function HelpSection() {
   const [openSource, setOpenSource] = useState<ContactSource | null>(null)
@@ -36,16 +44,17 @@ export function HelpSection() {
                 type="button"
                 onClick={() => setOpenSource((prev) => (prev === source ? null : source))}
                 aria-expanded={isOpen}
-                className={`w-full ${CARD_BASE_CLASS} ${CARD_STYLE.card}`}
+                className={HELP_CARD_CLASS}
               >
                 <CardBody
                   icon={Icon && <Icon className="h-5 w-5" />}
+                  iconClassName={HELP_ICON_CLASS}
                   title={link.label}
                   label={link.hook}
                   description={link.description}
                 />
                 <ChevronDownIcon
-                  className={`h-5 w-5 shrink-0 transition-transform duration-200 ${CARD_STYLE.chevron} ${isOpen ? 'rotate-180' : ''}`}
+                  className={`h-5 w-5 shrink-0 text-navy-400 transition-transform duration-200 group-hover:text-green-700 ${isOpen ? 'rotate-180' : ''}`}
                 />
               </button>
             )

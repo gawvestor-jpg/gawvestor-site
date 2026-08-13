@@ -1,19 +1,13 @@
 import type { ComponentType } from 'react'
-import { Card, type CardTone } from './ui/Card'
-import { DiscordIcon, ChartIcon, CalendarIcon, MailIcon, UsersIcon } from './ui/icons'
-import {
-  AFFILIATE_COMMUNITY,
-  BOOKING,
-  DISCORD_LINK,
-  NEWSLETTER_LINK,
-  TOOLS,
-} from '../config/content'
+import { Card, type CardAccent } from './ui/Card'
+import { DiscordIcon, ChartIcon, CalendarIcon } from './ui/icons'
+import { AFFILIATE_COMMUNITY, BOOKING, TOOLS } from '../config/content'
 
 const TOOL_ICONS: Record<string, ComponentType<{ className?: string }>> = {
   TradingView: ChartIcon,
 }
 
-const TOOL_TONES: Record<string, CardTone> = {
+const TOOL_ACCENTS: Record<string, CardAccent> = {
   TradingView: 'blue',
 }
 
@@ -33,19 +27,19 @@ export function CommunitySection() {
         </h2>
         <div className="mt-6 flex flex-col gap-3 sm:mt-7">
           <Card
-            tone="softGreen"
-            icon={<MailIcon className="h-5 w-5" />}
-            title={NEWSLETTER_LINK.label}
-            label={NEWSLETTER_LINK.handle}
-            description={NEWSLETTER_LINK.description}
-            href={NEWSLETTER_LINK.href}
+            accent="indigo"
+            icon={<DiscordIcon className="h-5 w-5" />}
+            title={AFFILIATE_COMMUNITY.label}
+            description={AFFILIATE_COMMUNITY.description}
+            href={AFFILIATE_COMMUNITY.href}
+            {...affiliateLinkProps}
           />
           {TOOLS.map((tool) => {
             const Icon = TOOL_ICONS[tool.name]
             return (
               <Card
                 key={tool.name}
-                tone={TOOL_TONES[tool.name] ?? 'mint'}
+                accent={TOOL_ACCENTS[tool.name] ?? 'green'}
                 icon={Icon && <Icon className="h-5 w-5" />}
                 title={tool.name}
                 label={tool.cta}
@@ -56,23 +50,7 @@ export function CommunitySection() {
             )
           })}
           <Card
-            tone="warm"
-            icon={<UsersIcon className="h-5 w-5" />}
-            title={AFFILIATE_COMMUNITY.label}
-            description={AFFILIATE_COMMUNITY.description}
-            href={AFFILIATE_COMMUNITY.href}
-            {...affiliateLinkProps}
-          />
-          <Card
-            tone="mint"
-            icon={<DiscordIcon className="h-5 w-5" />}
-            title={DISCORD_LINK.label}
-            label={DISCORD_LINK.handle}
-            description={DISCORD_LINK.description}
-            href={DISCORD_LINK.href}
-          />
-          <Card
-            tone="deepGreen"
+            accent="deepGreen"
             icon={<CalendarIcon className="h-5 w-5" />}
             title={BOOKING.label}
             label={BOOKING.handle}
