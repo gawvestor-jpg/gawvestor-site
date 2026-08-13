@@ -113,8 +113,8 @@ export const LEGAL = {
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
     'Paid 1:1 calls booked through this site are educational conversations only. They do not constitute personalized investment advice and are not a substitute for consulting a licensed financial professional.',
-    'Some links on this site (such as TradingView and the Investing Community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
-    'The Investing Community linked from this site is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not control its content, alerts, or membership terms and is not responsible for them.',
+    'Some links on this site (such as TradingView and the Discord trading community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
+    'The Discord community linked from this site is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not run that server, and does not control its content, alerts, or membership terms.',
   ],
   privacy: [
     {
