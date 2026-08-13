@@ -53,14 +53,14 @@ export const DISCORD_LINK = {
   href: '#',
 } as const
 
-// Third-party paid community I have an affiliate deal with — not my own Discord.
+// Third-party paid community with an affiliate deal — not my own Discord. The
+// affiliate disclosure now lives only in the description, so keep it in that copy.
 // TODO: swap href for the real Wealth Collective affiliate URL. Until then it's
 // left as '#' so the tile renders without pointing anywhere wrong.
 export const AFFILIATE_COMMUNITY = {
-  label: 'VIP Trading Community',
-  handle: 'Affiliate Partner',
+  label: 'Investing Community',
   description:
-    'A paid trading community I partner with for trade alerts and market analysis. Affiliate link — I may earn a commission.',
+    "A trading community I'm part of — trade alerts, market chat, and analysis. (Paid membership, affiliate link.)",
   href: '#',
 } as const
 
@@ -130,8 +130,8 @@ export const LEGAL = {
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
     'Paid 1:1 calls booked through this site are educational conversations only. They do not constitute personalized investment advice and are not a substitute for consulting a licensed financial professional.',
-    'Some links on this site (such as TradingView and the VIP Trading Community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
-    'The VIP Trading Community is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not control its content, alerts, or membership terms and is not responsible for them.',
+    'Some links on this site (such as TradingView and the Investing Community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
+    'The Investing Community linked from this site is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not control its content, alerts, or membership terms and is not responsible for them.',
   ],
   privacy: [
     {
