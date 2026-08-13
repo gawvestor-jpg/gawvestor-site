@@ -15,7 +15,7 @@ type ButtonAsLink = AnchorHTMLAttributes<HTMLAnchorElement> & {
 type ButtonProps = ButtonAsButton | ButtonAsLink
 
 const base =
-  'inline-block rounded-full px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-subtle'
+  'inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-wide transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-subtle'
 
 const variants: Record<Variant, string> = {
   primary: 'border border-green-700 bg-green-700 text-white hover:border-green-800 hover:bg-green-800',

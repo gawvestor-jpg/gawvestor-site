@@ -3,13 +3,14 @@ import { Button } from './ui/Button'
 import { submitContactForm, type ContactFormData, type ContactSource } from '../services/leadCapture'
 import { CONTACT } from '../config/content'
 
+// text-base on mobile keeps iOS from auto-zooming the page on field focus.
 const inputClass =
-  'mt-1.5 w-full rounded-full border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30'
+  'mt-1.5 w-full rounded-full border border-navy-200 bg-white px-4 py-3 text-base text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30 sm:text-sm'
 
 const textareaClass =
-  'mt-1.5 w-full rounded-2xl border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30'
+  'mt-1.5 w-full rounded-2xl border border-navy-200 bg-white px-4 py-3 text-base text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30 sm:text-sm'
 
-const labelClass = 'block text-xs font-medium text-navy-600'
+const labelClass = 'block text-[13px] font-medium text-navy-600'
 
 const initialForm: ContactFormData = {
   name: '',

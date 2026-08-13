@@ -50,6 +50,7 @@ export default {
       },
       boxShadow: {
         subtle: '0 1px 2px 0 rgba(15, 22, 34, 0.04), 0 1px 3px 0 rgba(15, 22, 34, 0.06)',
+        tile: '0 1px 2px rgba(15, 22, 34, 0.05), 0 4px 12px -2px rgba(15, 22, 34, 0.08)',
         card: '0 2px 8px rgba(15, 22, 34, 0.06), 0 8px 24px rgba(15, 22, 34, 0.08)',
         elevated: '0 8px 30px rgba(15, 22, 34, 0.12)',
         glow: '0 0 0 1px rgba(44, 105, 65, 0.35), 0 10px 30px -6px rgba(44, 105, 65, 0.25)',

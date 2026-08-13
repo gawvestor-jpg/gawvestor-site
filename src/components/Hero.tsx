@@ -7,7 +7,7 @@ export function Hero() {
     <section id="home" className="relative bg-white text-center">
       <div className="relative h-20 bg-green-800 sm:h-24">
         <div className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2">
-          <div className="h-20 w-20 overflow-hidden rounded-full border-4 border-white bg-cream-100 shadow-elevated sm:h-24 sm:w-24">
+          <div className="h-20 w-20 overflow-hidden rounded-full border-4 border-white bg-cream-100 shadow-elevated ring-1 ring-green-950/10 sm:h-24 sm:w-24">
             <img
               src={headshot}
               alt={HERO.name}
@@ -22,7 +22,11 @@ export function Hero() {
           {HERO.name}
         </h1>
 
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <p className="mx-auto mt-4 max-w-[19rem] text-[15px] font-medium leading-relaxed text-navy-500 sm:mt-5 sm:max-w-none sm:text-base">
+          {HERO.tagline}
+        </p>
+
+        <div className="mt-6 flex items-center justify-center gap-2 sm:mt-7">
           {SOCIAL_LINKS.map((link) => {
             const Icon = SOCIAL_ICONS[link.label]
             return (
@@ -32,9 +36,9 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={link.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-navy-200 text-navy-600 transition-colors hover:border-green-400 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-200 text-navy-600 shadow-subtle transition-colors hover:border-green-400 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
-                {Icon && <Icon className="h-4 w-4" />}
+                {Icon && <Icon className="h-[18px] w-[18px]" />}
               </a>
             )
           })}

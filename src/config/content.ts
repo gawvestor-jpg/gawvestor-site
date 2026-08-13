@@ -4,6 +4,7 @@ export const SITE = {
 
 export const HERO = {
   name: 'Gawvestor',
+  tagline: 'Semiconductor Engineer · Stocks, Tech & Personal Finance',
 } as const
 
 export const SOCIAL_LINKS = [
@@ -38,10 +39,28 @@ export const BOOKING = {
   href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
 } as const
 
+export const NEWSLETTER_LINK = {
+  label: 'Newsletter',
+  handle: 'Free',
+  description: "Market notes and what I'm watching, sent straight to your inbox.",
+  href: '#newsletter',
+} as const
+
 export const DISCORD_LINK = {
   label: 'Discord',
   handle: 'Coming soon',
   description: 'Talk markets, ask questions, and connect with other investors.',
+  href: '#',
+} as const
+
+// Third-party paid community I have an affiliate deal with — not my own Discord.
+// TODO: swap href for the real Wealth Collective affiliate URL. Until then it's
+// left as '#' so the tile renders without pointing anywhere wrong.
+export const AFFILIATE_COMMUNITY = {
+  label: 'VIP Trading Community',
+  handle: 'Affiliate Partner',
+  description:
+    'A paid trading community I partner with for trade alerts and market analysis. Affiliate link — I may earn a commission.',
   href: '#',
 } as const
 
@@ -63,8 +82,9 @@ export const TOOLS = [
   {
     name: 'TradingView',
     cta: 'Free real-time charts',
+    // Lead sentence kept short so the affiliate disclosure always fits on the tile.
     description:
-      'Real-time charts and market analysis I use to track stocks and trends. Affiliate link — I may earn a commission if you sign up.',
+      'Real-time charts I use to track stocks and trends. Affiliate link — I may earn a commission.',
     href: 'https://www.tradingview.com/?aff_id=168754',
   },
 ] as const
@@ -110,7 +130,8 @@ export const LEGAL = {
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
     'Paid 1:1 calls booked through this site are educational conversations only. They do not constitute personalized investment advice and are not a substitute for consulting a licensed financial professional.',
-    'Some links on this site (such as TradingView) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
+    'Some links on this site (such as TradingView and the VIP Trading Community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
+    'The VIP Trading Community is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not control its content, alerts, or membership terms and is not responsible for them.',
   ],
   privacy: [
     {

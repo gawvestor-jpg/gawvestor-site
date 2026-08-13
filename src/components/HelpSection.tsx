@@ -20,12 +20,12 @@ export function HelpSection() {
   const [openSource, setOpenSource] = useState<ContactSource | null>(null)
 
   return (
-    <section id="contact" className="border-t border-navy-100 bg-white px-5 py-6 sm:py-8">
+    <section id="contact" className="border-t border-navy-100 bg-white px-5 py-9 sm:py-12">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-xl font-medium tracking-tight text-navy-900 sm:text-2xl">
           Inquiries
         </h2>
-        <div className="mt-4 flex flex-col gap-2.5 sm:mt-5">
+        <div className="mt-6 flex flex-col gap-3 sm:mt-7">
           {HELP_LINKS.map((link) => {
             const Icon = HELP_ICONS[link.label]
             const source = HELP_SOURCES[link.label]

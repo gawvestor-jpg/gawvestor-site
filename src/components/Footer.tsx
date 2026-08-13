@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-navy-100 bg-cream-50 px-5 py-6 text-center sm:py-8">
+    <footer className="border-t border-navy-100 bg-cream-50 px-5 py-9 text-center sm:py-12">
       <div>
         <div
           id="newsletter"
@@ -22,7 +22,7 @@ export function Footer() {
             {NEWSLETTER.heading}
           </h2>
           <div className="mt-2 flex justify-center">
-            <span className="rounded-full bg-green-700 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+            <span className="rounded-full bg-green-700 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-white">
               Free
             </span>
           </div>
@@ -37,7 +37,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 to={link.href}
-                className="rounded-sm text-xs tracking-wide text-navy-500 transition-colors duration-200 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="inline-flex min-h-11 items-center rounded-sm px-1 text-[13px] tracking-wide text-navy-500 transition-colors duration-200 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 {link.label}
               </Link>
@@ -46,7 +46,7 @@ export function Footer() {
           <p className="mt-4 text-xs text-navy-500">
             &copy; {year} {FOOTER.copyrightName}. All rights reserved.
           </p>
-          <p className="mt-2 text-[11px] leading-relaxed text-navy-500">
+          <p className="mt-2 text-xs leading-relaxed text-navy-500">
             {FOOTER.disclaimerNote}{' '}
             <Link
               to="/disclaimer"

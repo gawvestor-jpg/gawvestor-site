@@ -4,8 +4,9 @@ import { submitNewsletterSignup } from '../services/leadCapture'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
+// text-base on mobile keeps iOS from auto-zooming the page on field focus.
 const inputClass =
-  'w-full rounded-full border border-white bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30'
+  'w-full rounded-full border border-white bg-white px-4 py-3 text-base text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30 sm:text-sm'
 
 export function NewsletterSignup() {
   const [firstName, setFirstName] = useState('')

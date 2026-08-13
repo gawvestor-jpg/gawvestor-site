@@ -65,6 +65,26 @@ export function DiscordIcon({ className = '' }: IconProps) {
   )
 }
 
+export function UsersIcon({ className = '' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="9" cy="8" r="3.25" />
+      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
+      <path d="M16 5.4a3.25 3.25 0 0 1 0 6.2" />
+      <path d="M17.5 14.3a5.5 5.5 0 0 1 3 4.7" />
+    </svg>
+  )
+}
+
 export const SOCIAL_ICONS: Record<string, ComponentType<IconProps>> = {
   TikTok: TikTokIcon,
   Instagram: InstagramIcon,
@@ -77,7 +97,7 @@ export function ChevronRightIcon({ className = '' }: IconProps) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.75"
+      strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -94,7 +114,7 @@ export function ChevronDownIcon({ className = '' }: IconProps) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.75"
+      strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
