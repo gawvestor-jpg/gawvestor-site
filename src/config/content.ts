@@ -40,15 +40,13 @@ export const BOOKING = {
 } as const
 
 // The only Discord tile on the site. It points at the Wealth Collective
-// affiliate community, not a server we run, so the affiliate disclosure in the
+// community, not a server we run, so the affiliate disclosure in the
 // description is the sole disclosure — keep it in that copy.
-// TODO: swap href for the real Wealth Collective affiliate URL. Until then it's
-// left as '#' so the tile renders without pointing anywhere wrong.
 export const AFFILIATE_COMMUNITY = {
   label: 'Discord',
   description:
     "A trading community I'm part of — trade alerts, market chat, and analysis. (Paid membership, affiliate link.)",
-  href: '#',
+  href: 'https://discord.gg/dHwmR6Ktw2',
 } as const
 
 export const HELP_LINKS = [
