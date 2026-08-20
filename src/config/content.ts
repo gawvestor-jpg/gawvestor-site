@@ -4,7 +4,7 @@ export const SITE = {
 
 export const HERO = {
   name: 'Gawvestor',
-  tagline: 'Semiconductor Engineer · Stocks, Tech & Personal Finance',
+  tagline: 'Stocks, Tech & Personal Finance',
 } as const
 
 export const SOCIAL_LINKS = [
@@ -30,14 +30,6 @@ export const SOCIAL_LINKS = [
     href: 'https://www.youtube.com/@gawvestor',
   },
 ] as const
-
-export const BOOKING = {
-  label: '1:1 Call',
-  handle: '30 min · $100',
-  description:
-    'Book time to talk stocks, portfolio questions, or how to get started. Educational conversation only — not personalized investment advice.',
-  href: 'https://cal.com/gawvestor-gaw-pyf0dp/30min',
-} as const
 
 // The only Discord tile on the site. It points at the Wealth Collective
 // community, not a server we run, so the affiliate disclosure in the

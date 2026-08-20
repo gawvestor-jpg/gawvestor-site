@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react'
 import { Card, type CardAccent } from './ui/Card'
-import { DiscordIcon, ChartIcon, CalendarIcon } from './ui/icons'
-import { AFFILIATE_COMMUNITY, BOOKING, TOOLS } from '../config/content'
+import { DiscordIcon, ChartIcon } from './ui/icons'
+import { AFFILIATE_COMMUNITY, TOOLS } from '../config/content'
 
 const TOOL_ICONS: Record<string, ComponentType<{ className?: string }>> = {
   TradingView: ChartIcon,
@@ -49,15 +49,6 @@ export function CommunitySection() {
               />
             )
           })}
-          <Card
-            accent="deepGreen"
-            icon={<CalendarIcon className="h-5 w-5" />}
-            title={BOOKING.label}
-            label={BOOKING.handle}
-            description={BOOKING.description}
-            href={BOOKING.href}
-            {...EXTERNAL_LINK_PROPS}
-          />
         </div>
       </div>
     </section>
