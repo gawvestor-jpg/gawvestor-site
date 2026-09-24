@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-navy-100 bg-cream-50 px-5 py-10 text-center sm:py-12">
+    <footer className="border-t border-navy-100 bg-cream-50 px-5 py-8 text-center sm:py-10">
       <div className="mx-auto max-w-md">
         {/* Newsletter: kept intentionally quiet — an extension of the brand,
             not the point of the page. */}

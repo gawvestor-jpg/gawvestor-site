@@ -13,7 +13,7 @@ export function WorkWithSection() {
   }, [formOpen])
 
   return (
-    <section id="work-with" className="bg-green-800 px-5 py-14 text-center sm:py-20">
+    <section id="work-with" className="bg-green-800 px-5 py-12 text-center sm:py-16">
       <div className="mx-auto max-w-md sm:max-w-xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-300">
           {WORK_WITH.eyebrow}

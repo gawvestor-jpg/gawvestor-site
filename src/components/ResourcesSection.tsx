@@ -4,7 +4,7 @@ import { RESOURCES } from '../config/content'
 // Deliberately a quiet, editorial list — not another stack of green cards.
 export function ResourcesSection() {
   return (
-    <section id="resources" className="border-t border-navy-100 bg-white px-5 py-12 sm:py-16">
+    <section id="resources" className="border-t border-navy-100 bg-white px-5 py-10 sm:py-14">
       <div className="mx-auto max-w-md sm:max-w-3xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {RESOURCES.eyebrow}

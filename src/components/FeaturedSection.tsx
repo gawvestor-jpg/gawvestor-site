@@ -6,12 +6,12 @@ import { FEATURED } from '../config/content'
 const PLACEHOLDER_ART: Record<string, string> = {
   Markets: 'from-green-700 to-green-900',
   Technology: 'from-navy-700 to-navy-950',
-  'Personal Finance': 'from-green-500 to-green-800',
+  'Personal Finance': 'from-navy-800 to-green-950',
 }
 
 export function FeaturedSection() {
   return (
-    <section id="featured" className="bg-white px-5 py-12 sm:py-16">
+    <section id="featured" className="border-t border-navy-100 bg-white px-5 py-10 sm:py-14">
       <div className="mx-auto max-w-md sm:max-w-3xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {FEATURED.eyebrow}

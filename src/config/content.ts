@@ -61,7 +61,7 @@ export const FEATURED = {
 
 export const ABOUT = {
   eyebrow: 'About',
-  body: 'Gawvestor breaks down markets, tech, and money like a person — not a suit. Short, no-jargon explanations of what’s moving and what it means for your money, made for people who want to understand investing rather than be sold on it.',
+  body: 'Gawvestor covers investing, markets, technology, and personal finance — breaking down what’s happening and why it matters.',
   pillars: ['Investing', 'Markets', 'Technology', 'Personal Finance'],
 } as const
 

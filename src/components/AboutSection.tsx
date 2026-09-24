@@ -3,7 +3,7 @@ import { ABOUT } from '../config/content'
 
 export function AboutSection() {
   return (
-    <section id="about" className="border-t border-navy-100 bg-cream-50 px-5 py-14 text-center sm:py-20">
+    <section id="about" className="border-t border-navy-100 bg-cream-50 px-5 py-10 text-center sm:py-14">
       <div className="mx-auto max-w-md sm:max-w-xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {ABOUT.eyebrow}
