@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ContactForm } from './ContactForm'
+import { BrandForm } from './BrandForm'
 import { WORK_WITH, FOOTER } from '../config/content'
 import { Reveal } from './ui/Reveal'
 
@@ -44,7 +44,7 @@ export function WorkWithSection() {
         >
           <div className="overflow-hidden">
             <div className="rounded-3xl bg-white p-5 text-left shadow-elevated sm:p-6">
-              <ContactForm source="brand-partnerships" />
+              <BrandForm />
             </div>
           </div>
         </div>

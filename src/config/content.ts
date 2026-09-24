@@ -64,19 +64,6 @@ export const NEWSLETTER = {
   subheading: 'Occasional market breakdowns by email. No spam, unsubscribe anytime.',
 } as const
 
-export const CONTACT = {
-  heading: 'Get in touch',
-  subheading:
-    "Have a question, a story idea, or a partnership in mind? I'd love to hear from you.",
-  investmentInterests: [
-    'Market trends & commentary',
-    'Personal investing basics',
-    'Brand partnership',
-    'Media / press',
-    'Other',
-  ],
-} as const
-
 export const FOOTER = {
   email: 'hello@gawvestor.com',
   copyrightName: 'Gawvestor',
@@ -105,7 +92,7 @@ export const LEGAL = {
   privacy: [
     {
       heading: 'Information we collect',
-      body: 'When you fill out the contact form on this site, we collect the information you provide directly, such as your name, email address, phone number, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
+      body: 'When you fill out the contact form on this site, we collect the information you provide directly, such as your name, company, email address, and message content. We do not collect payment information, and we do not knowingly collect information from children under 13.',
     },
     {
       heading: 'Cookies',
