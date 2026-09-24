@@ -1,6 +1,6 @@
 import { PlayIcon, ArrowUpRightIcon } from './ui/icons'
 import { Reveal } from './ui/Reveal'
-import { FEATURED } from '../config/content'
+import { FEATURED } from '../config/featured'
 
 // Editorial treatment: numbered entries, poster imagery, serif hooks.
 // Real thumbnails come from content.ts (see the FEATURED comment there);
@@ -78,6 +78,11 @@ export function FeaturedSection() {
                   <h3 className="mt-1.5 font-display text-[17px] font-medium leading-snug text-navy-950 transition-colors group-hover:text-green-800 sm:text-lg">
                     {item.title}
                   </h3>
+                  {item.description && (
+                    <p className="mt-1 line-clamp-2 text-[13px] leading-snug text-navy-500">
+                      {item.description}
+                    </p>
+                  )}
                   <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-navy-400 transition-colors group-hover:text-green-700">
                     Watch on {item.platform}
                     <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" />

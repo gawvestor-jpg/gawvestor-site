@@ -31,53 +31,6 @@ export const SOCIAL_LINKS = [
   },
 ] as const
 
-// ── Featured content ────────────────────────────────────────────────────
-// Hand-picked pieces, newest-best first. To swap in a real piece:
-//   1. Drop a vertical screenshot/frame of the video (any 4:5-ish crop is
-//      fine) into src/assets/featured/, e.g. market-move.jpg
-//   2. Import it at the top of this file:
-//        import marketMove from '../assets/featured/market-move.jpg'
-//   3. Set `thumbnail: marketMove` and the real `href` on the item below.
-// Items without a `thumbnail` render a designed placeholder, so partial
-// swaps are fine.
-export type FeaturedItem = {
-  category: string
-  /** The hook — one line, written like a headline, not a description. */
-  title: string
-  platform: 'TikTok' | 'YouTube' | 'Instagram'
-  href: string
-  thumbnail?: string
-}
-
-export const FEATURED: {
-  eyebrow: string
-  heading: string
-  items: FeaturedItem[]
-} = {
-  eyebrow: 'Featured',
-  heading: 'Recent breakdowns',
-  items: [
-    {
-      category: 'Markets',
-      title: 'Placeholder — What this week’s market move actually means',
-      platform: 'TikTok',
-      href: 'https://www.tiktok.com/@gawvestor',
-    },
-    {
-      category: 'Technology',
-      title: 'Placeholder — The chip supply chain, explained in 60 seconds',
-      platform: 'TikTok',
-      href: 'https://www.tiktok.com/@gawvestor',
-    },
-    {
-      category: 'Personal Finance',
-      title: 'Placeholder — The first account to open before you invest',
-      platform: 'YouTube',
-      href: 'https://www.youtube.com/@gawvestor',
-    },
-  ],
-}
-
 export const ABOUT = {
   eyebrow: 'About',
   body: 'Gawvestor covers investing, markets, technology, and personal finance — breaking down what’s happening and why it matters.',
