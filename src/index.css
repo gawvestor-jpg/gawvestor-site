@@ -12,3 +12,25 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Hero entrance: one quiet fade-and-rise on load. */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-enter {
+  animation: hero-enter 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-enter {
+    animation: none;
+  }
+}

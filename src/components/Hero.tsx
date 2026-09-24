@@ -7,7 +7,7 @@ import headshot from '../assets/headshot.jpg'
 export function Hero() {
   return (
     <section id="home" className="bg-white px-5 pb-8 pt-9 text-center sm:pb-12 sm:pt-14">
-      <div className="mx-auto max-w-sm sm:max-w-md">
+      <div className="animate-hero-enter mx-auto max-w-sm sm:max-w-md">
         <div className="mx-auto h-20 w-20 overflow-hidden rounded-full bg-cream-100 shadow-subtle ring-1 ring-navy-950/10 sm:h-24 sm:w-24">
           <img src={headshot} alt={HERO.name} className="h-full w-full object-cover" />
         </div>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ContactForm } from './ContactForm'
 import { WORK_WITH, FOOTER } from '../config/content'
+import { Reveal } from './ui/Reveal'
 
 export function WorkWithSection() {
   const [formOpen, setFormOpen] = useState(false)
@@ -14,7 +15,7 @@ export function WorkWithSection() {
 
   return (
     <section id="work-with" className="bg-green-800 px-5 py-12 text-center sm:py-16">
-      <div className="mx-auto max-w-md sm:max-w-xl">
+      <div className="mx-auto max-w-md sm:max-w-xl"><Reveal>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-300">
           {WORK_WITH.eyebrow}
         </p>
@@ -57,7 +58,7 @@ export function WorkWithSection() {
             {FOOTER.email}
           </a>
         </p>
-      </div>
+      </Reveal></div>
     </section>
   )
 }

@@ -1,4 +1,5 @@
 import { PlayIcon, ArrowUpRightIcon } from './ui/icons'
+import { Reveal } from './ui/Reveal'
 import { FEATURED } from '../config/content'
 
 // Editorial treatment: numbered entries, poster imagery, serif hooks.
@@ -27,15 +28,15 @@ export function FeaturedSection() {
           {FEATURED.items.map((item, index) => {
             const number = String(index + 1).padStart(2, '0')
             return (
+              <Reveal key={item.title} delay={index * 90}>
               <a
-                key={item.title}
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-4 sm:block"
               >
                 {/* Poster */}
-                <div className="relative aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-xl shadow-subtle transition-shadow duration-300 group-hover:shadow-card sm:w-full sm:rounded-2xl">
+                <div className="relative aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-xl shadow-subtle transition-[box-shadow,transform] duration-300 group-hover:-translate-y-0.5 group-hover:shadow-card motion-reduce:group-hover:translate-y-0 sm:w-full sm:rounded-2xl">
                   {item.thumbnail ? (
                     <>
                       <img
@@ -83,6 +84,7 @@ export function FeaturedSection() {
                   </p>
                 </div>
               </a>
+              </Reveal>
             )
           })}
         </div>

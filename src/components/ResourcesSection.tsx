@@ -1,11 +1,12 @@
 import { ArrowUpRightIcon } from './ui/icons'
 import { RESOURCES } from '../config/content'
+import { Reveal } from './ui/Reveal'
 
 // Deliberately a quiet, editorial list — not another stack of green cards.
 export function ResourcesSection() {
   return (
     <section id="resources" className="border-t border-navy-100 bg-white px-5 py-10 sm:py-14">
-      <div className="mx-auto max-w-md sm:max-w-3xl">
+      <div className="mx-auto max-w-md sm:max-w-3xl"><Reveal>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {RESOURCES.eyebrow}
         </p>
@@ -37,7 +38,7 @@ export function ResourcesSection() {
         </ul>
 
         <p className="mt-4 text-xs leading-relaxed text-navy-400">{RESOURCES.disclosure}</p>
-      </div>
+      </Reveal></div>
     </section>
   )
 }
