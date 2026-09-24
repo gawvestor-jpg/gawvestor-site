@@ -1,8 +1,10 @@
-import { PlayIcon } from './ui/icons'
+import { PlayIcon, ArrowUpRightIcon } from './ui/icons'
 import { FEATURED } from '../config/content'
 
-// Placeholder art per category until real thumbnails land in content.ts.
-// Kept as quiet, brand-toned gradients so the cards look finished either way.
+// Editorial treatment: numbered entries, poster imagery, serif hooks.
+// Real thumbnails come from content.ts (see the FEATURED comment there);
+// until then each poster is a designed gradient with an oversized index
+// numeral so the section looks finished with zero images.
 const PLACEHOLDER_ART: Record<string, string> = {
   Markets: 'from-green-700 to-green-900',
   Technology: 'from-navy-700 to-navy-950',
@@ -20,44 +22,69 @@ export function FeaturedSection() {
           {FEATURED.heading}
         </h2>
 
-        {/* Mobile: compact editorial rows (small poster + text). Desktop: 3-up
-            poster grid. Full-width 4:5 posters on a phone would be enormous. */}
-        <div className="mt-6 flex flex-col gap-5 sm:mt-8 sm:grid sm:grid-cols-3 sm:gap-5">
-          {FEATURED.items.map((item) => (
-            <a
-              key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 sm:block"
-            >
-              <div
-                className={`relative aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br shadow-subtle transition-shadow duration-200 group-hover:shadow-card sm:w-full sm:rounded-2xl ${
-                  PLACEHOLDER_ART[item.category] ?? 'from-green-700 to-green-900'
-                }`}
+        {/* Mobile: compact editorial rows. Desktop: 3-up poster grid. */}
+        <div className="mt-6 flex flex-col gap-6 sm:mt-8 sm:grid sm:grid-cols-3 sm:gap-6">
+          {FEATURED.items.map((item, index) => {
+            const number = String(index + 1).padStart(2, '0')
+            return (
+              <a
+                key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-4 sm:block"
               >
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-200 group-hover:scale-105 group-hover:bg-white/25 motion-reduce:group-hover:scale-100 sm:h-12 sm:w-12">
-                    <PlayIcon className="h-4 w-4 translate-x-px sm:h-5 sm:w-5" />
+                {/* Poster */}
+                <div className="relative aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-xl shadow-subtle transition-shadow duration-300 group-hover:shadow-card sm:w-full sm:rounded-2xl">
+                  {item.thumbnail ? (
+                    <>
+                      <img
+                        src={item.thumbnail}
+                        alt=""
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:group-hover:scale-100"
+                      />
+                      {/* Legibility scrim for the platform pill */}
+                      <span className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-navy-950/60 to-transparent" />
+                    </>
+                  ) : (
+                    <span
+                      className={`absolute inset-0 bg-gradient-to-br ${PLACEHOLDER_ART[item.category] ?? 'from-green-700 to-green-900'}`}
+                    >
+                      {/* Oversized index numeral, magazine-style */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute -bottom-4 -right-1 font-display text-[5rem] font-medium leading-none text-white/10 sm:-bottom-7 sm:text-[8.5rem]"
+                      >
+                        {number}
+                      </span>
+                    </span>
+                  )}
+                  <span className="absolute bottom-2 left-2 flex items-center gap-1.5 rounded-full bg-navy-950/45 py-1 pl-2 pr-2.5 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm sm:bottom-3 sm:left-3 sm:text-[11px]">
+                    <PlayIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                    {item.platform}
                   </span>
-                </span>
-                <span className="absolute left-3 top-3 hidden rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-navy-900 sm:inline-block">
-                  {item.category}
-                </span>
-                <span className="absolute bottom-3 left-3 hidden text-[11px] font-medium uppercase tracking-wider text-white/80 sm:inline">
-                  {item.platform}
-                </span>
-              </div>
-              <div className="min-w-0 sm:mt-3">
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-green-700 sm:hidden">
-                  {item.category} · {item.platform}
-                </p>
-                <p className="mt-1 font-display text-base font-medium leading-snug text-navy-900 transition-colors group-hover:text-green-800 sm:mt-0">
-                  {item.title}
-                </p>
-              </div>
-            </a>
-          ))}
+                </div>
+
+                {/* Entry text */}
+                <div className="min-w-0 flex-1 sm:mt-4">
+                  <p className="flex items-baseline gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-green-700">
+                    <span aria-hidden="true" className="font-display text-xs tracking-normal text-navy-400">
+                      {number}
+                    </span>
+                    {item.category}
+                  </p>
+                  <h3 className="mt-1.5 font-display text-[17px] font-medium leading-snug text-navy-950 transition-colors group-hover:text-green-800 sm:text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-navy-400 transition-colors group-hover:text-green-700">
+                    Watch on {item.platform}
+                    <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" />
+                  </p>
+                </div>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>

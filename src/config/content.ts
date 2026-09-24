@@ -31,10 +31,29 @@ export const SOCIAL_LINKS = [
   },
 ] as const
 
-// Hand-picked pieces, newest-best first. Swap the placeholder entries for
-// real links + hooks as content ships; thumbnails are optional imports —
-// when `thumbnail` is undefined the card renders a styled placeholder.
-export const FEATURED = {
+// ── Featured content ────────────────────────────────────────────────────
+// Hand-picked pieces, newest-best first. To swap in a real piece:
+//   1. Drop a vertical screenshot/frame of the video (any 4:5-ish crop is
+//      fine) into src/assets/featured/, e.g. market-move.jpg
+//   2. Import it at the top of this file:
+//        import marketMove from '../assets/featured/market-move.jpg'
+//   3. Set `thumbnail: marketMove` and the real `href` on the item below.
+// Items without a `thumbnail` render a designed placeholder, so partial
+// swaps are fine.
+export type FeaturedItem = {
+  category: string
+  /** The hook — one line, written like a headline, not a description. */
+  title: string
+  platform: 'TikTok' | 'YouTube' | 'Instagram'
+  href: string
+  thumbnail?: string
+}
+
+export const FEATURED: {
+  eyebrow: string
+  heading: string
+  items: FeaturedItem[]
+} = {
   eyebrow: 'Featured',
   heading: 'Recent breakdowns',
   items: [
@@ -57,7 +76,7 @@ export const FEATURED = {
       href: 'https://www.youtube.com/@gawvestor',
     },
   ],
-} as const
+}
 
 export const ABOUT = {
   eyebrow: 'About',
