@@ -150,7 +150,7 @@ export function BrandForm() {
           placeholder="A sentence or two about the campaign or idea."
           value={form.message}
           onChange={handleChange}
-          className={`${inputClass} rounded-2xl`}
+          className={inputClass}
         />
       </div>
 

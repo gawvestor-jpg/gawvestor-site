@@ -83,7 +83,7 @@ export function FeaturedSection() {
                       {item.description}
                     </p>
                   )}
-                  <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-navy-400 transition-colors group-hover:text-green-700">
+                  <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-navy-500 transition-colors group-hover:text-green-700">
                     Watch on {item.platform}
                     <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" />
                   </p>

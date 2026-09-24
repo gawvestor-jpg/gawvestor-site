@@ -47,7 +47,7 @@ export function NewsletterSignup() {
       </div>
       <p aria-live="polite" className="mt-2 text-sm">
         {status === 'success' && (
-          <span className="text-green-800">You're in — welcome aboard.</span>
+          <span className="text-green-800">You're in.</span>
         )}
         {status === 'error' && (
           <span className="text-red-600">

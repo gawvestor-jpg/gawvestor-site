@@ -37,7 +37,7 @@ export function ResourcesSection() {
           ))}
         </ul>
 
-        <p className="mt-4 text-xs leading-relaxed text-navy-400">{RESOURCES.disclosure}</p>
+        <p className="mt-4 text-xs leading-relaxed text-navy-500">{RESOURCES.disclosure}</p>
       </Reveal></div>
     </section>
   )
