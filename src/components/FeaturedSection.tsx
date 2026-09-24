@@ -13,7 +13,7 @@ const PLACEHOLDER_ART: Record<string, string> = {
 
 export function FeaturedSection() {
   return (
-    <section id="featured" className="border-t border-navy-100 bg-white px-5 py-10 sm:py-14">
+    <section id="featured" className="border-t border-navy-100 bg-white px-5 pb-10 pt-8 sm:py-14">
       <div className="mx-auto max-w-md sm:max-w-3xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {FEATURED.eyebrow}
@@ -23,7 +23,7 @@ export function FeaturedSection() {
         </h2>
 
         {/* Mobile: compact editorial rows. Desktop: 3-up poster grid. */}
-        <div className="mt-6 flex flex-col gap-6 sm:mt-8 sm:grid sm:grid-cols-3 sm:gap-6">
+        <div className="mt-5 flex flex-col gap-5 sm:mt-8 sm:grid sm:grid-cols-3 sm:gap-6">
           {FEATURED.items.map((item, index) => {
             const number = String(index + 1).padStart(2, '0')
             return (

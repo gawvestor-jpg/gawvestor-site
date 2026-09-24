@@ -34,7 +34,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={link.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full text-navy-500 transition-colors hover:bg-green-100 hover:text-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-100"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-navy-500 transition-colors hover:bg-green-100 hover:text-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-100"
               >
                 {Icon && <Icon className="h-4 w-4" />}
               </a>

@@ -35,12 +35,12 @@ export function NewsletterSignup() {
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="min-w-0 flex-1 rounded-full border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30"
+          className="min-w-0 flex-1 rounded-full border border-navy-200 bg-white px-4 py-3 text-base text-navy-900 placeholder:text-navy-400 sm:py-2.5 sm:text-sm transition-colors focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/30"
         />
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="shrink-0 rounded-full border border-green-700 bg-green-700 px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 ease-out hover:border-green-800 hover:bg-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="shrink-0 rounded-full border border-green-700 bg-green-700 px-5 py-3 text-sm font-medium sm:py-2.5 tracking-wide text-white transition-all duration-200 ease-out hover:border-green-800 hover:bg-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
         </button>

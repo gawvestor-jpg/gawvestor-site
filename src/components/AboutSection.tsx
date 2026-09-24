@@ -8,10 +8,10 @@ export function AboutSection() {
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-green-700">
           {ABOUT.eyebrow}
         </p>
-        <p className="mt-4 font-display text-xl font-medium leading-relaxed tracking-tight text-navy-900 sm:text-2xl sm:leading-relaxed">
+        <p className="mt-3 font-display text-lg font-medium leading-relaxed tracking-tight text-navy-900 sm:mt-4 sm:text-2xl sm:leading-relaxed">
           {ABOUT.body}
         </p>
-        <p className="mt-6 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 text-sm font-medium tracking-wide text-green-800">
+        <p className="mt-5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 text-sm font-medium tracking-wide text-green-800">
           {ABOUT.pillars.map((pillar, i) => (
             <Fragment key={pillar}>
               {i > 0 && (
