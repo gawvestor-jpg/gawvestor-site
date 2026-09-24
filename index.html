@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#232a36" />
+    <meta name="theme-color" content="#1e442c" />
 
     <!-- ?v=2 busts the aggressive favicon caching after replacing the old mark. -->
     <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
@@ -11,33 +11,59 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <title>Gawvestor | Engineer, Finance Content Creator</title>
+    <!-- Fonts: <link> instead of a CSS @import so the browser can start the
+         font request in parallel with the stylesheet instead of after it. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <title>Gawvestor | Stocks, Tech & Personal Finance</title>
     <meta
       name="description"
       content="Gawvestor breaks down markets, investing, tech supply chains, and personal finance into clear, jargon-free stories for young adults. Follow along or get in touch."
     />
+    <link rel="canonical" href="https://gawvestor.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gawvestor.com/" />
     <meta property="og:site_name" content="Gawvestor" />
-    <meta property="og:title" content="Gawvestor | Engineer, Finance Content Creator" />
+    <meta property="og:title" content="Gawvestor | Stocks, Tech & Personal Finance" />
     <meta
       property="og:description"
       content="Breaking down markets, investing, tech supply chains, and personal finance into clear, jargon-free stories for young adults."
     />
-    <meta property="og:image" content="https://gawvestor.com/og-image.png" />
+    <meta property="og:image" content="https://gawvestor.com/og-image.png?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gawvestor | Engineer, Finance Content Creator" />
+    <meta name="twitter:title" content="Gawvestor | Stocks, Tech & Personal Finance" />
     <meta
       name="twitter:description"
       content="Breaking down markets, investing, tech supply chains, and personal finance into clear, jargon-free stories for young adults."
     />
-    <meta name="twitter:image" content="https://gawvestor.com/og-image.png" />
+    <meta name="twitter:image" content="https://gawvestor.com/og-image.png?v=2" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Brandon Gaw",
+        "alternateName": "Gawvestor",
+        "url": "https://gawvestor.com/",
+        "description": "Finance content creator breaking down markets, investing, tech supply chains, and personal finance for young adults.",
+        "sameAs": [
+          "https://www.tiktok.com/@gawvestor",
+          "https://www.instagram.com/gawvestor",
+          "https://www.youtube.com/@gawvestor"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -66,6 +66,12 @@ export const TOOLS = [
   },
 ] as const
 
+export const NEWSLETTER = {
+  heading: 'Stay in the loop',
+  subheading:
+    'Market breakdowns and updates, straight to your inbox. No spam, unsubscribe anytime.',
+} as const
+
 export const CONTACT = {
   heading: 'Get in touch',
   subheading:
@@ -102,7 +108,6 @@ export const LEGAL = {
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
-    'Paid 1:1 calls booked through this site are educational conversations only. They do not constitute personalized investment advice and are not a substitute for consulting a licensed financial professional.',
     'Some links on this site (such as TradingView and the Discord trading community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
     'The Discord community linked from this site is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not run that server, and does not control its content, alerts, or membership terms.',
   ],

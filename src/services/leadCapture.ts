@@ -13,6 +13,11 @@ const CONTACT_SUBJECTS: Record<ContactSource, (name: string) => string> = {
   'brand-partnerships': (name) => `BRAND - New inquiry from ${name}`,
 }
 
+export type NewsletterData = {
+  firstName: string
+  email: string
+}
+
 export type LeadCaptureResult = { success: true } | { success: false; error: string }
 
 // Formspree form endpoint for the contact form. This is a public form action URL
@@ -49,6 +54,37 @@ export async function submitContactForm(
 
     const body = await response.json().catch(() => null)
     const error = body?.errors?.[0]?.message ?? 'Submission failed. Please try again.'
+    return { success: false, error }
+  } catch {
+    return { success: false, error: 'Network error. Please try again.' }
+  }
+}
+
+// Newsletter signups go to the same Formspree inbox, tagged with their own
+// subject prefix so they're easy to filter (and export to a real email
+// provider later).
+export async function submitNewsletterSignup(data: NewsletterData): Promise<LeadCaptureResult> {
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.firstName,
+        email: data.email,
+        _replyto: data.email,
+        _subject: `NEWSLETTER - Signup from ${data.firstName || data.email}`,
+      }),
+    })
+
+    if (response.ok) {
+      return { success: true }
+    }
+
+    const body = await response.json().catch(() => null)
+    const error = body?.errors?.[0]?.message ?? 'Signup failed. Please try again.'
     return { success: false, error }
   } catch {
     return { success: false, error: 'Network error. Please try again.' }

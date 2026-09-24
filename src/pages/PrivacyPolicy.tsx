@@ -1,7 +1,10 @@
 import { LegalLayout } from '../components/LegalLayout'
 import { LEGAL } from '../config/content'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export function PrivacyPolicy() {
+  usePageMeta('Privacy Policy', 'How Gawvestor collects, uses, and protects the information you share through this site.')
+
   return (
     <LegalLayout title="Privacy Policy">
       {LEGAL.privacy.map((section) => (

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { FOOTER } from '../config/content'
+import { NewsletterSignup } from './NewsletterSignup'
+import { MailIcon } from './ui/icons'
+import { FOOTER, NEWSLETTER } from '../config/content'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -7,7 +9,33 @@ export function Footer() {
   return (
     <footer className="border-t border-navy-100 bg-cream-50 px-5 py-8 text-center sm:py-10">
       <div className="mx-auto max-w-md">
-        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5">
+        <section
+          id="newsletter"
+          aria-labelledby="newsletter-heading"
+          className="rounded-3xl border border-green-200 bg-green-100 p-5 text-left shadow-tile sm:p-6"
+        >
+          <div className="flex items-center gap-3.5">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-green-700">
+              <MailIcon className="h-[18px] w-[18px]" />
+            </span>
+            <div>
+              <h2
+                id="newsletter-heading"
+                className="font-display text-lg font-medium tracking-tight text-navy-900"
+              >
+                {NEWSLETTER.heading}
+              </h2>
+              <p className="mt-0.5 text-[13px] leading-snug text-navy-800">
+                {NEWSLETTER.subheading}
+              </p>
+            </div>
+          </div>
+          <div className="mt-4">
+            <NewsletterSignup />
+          </div>
+        </section>
+
+        <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 border-t border-navy-100 pt-5">
           {FOOTER.links.map((link) => (
             <Link
               key={link.label}

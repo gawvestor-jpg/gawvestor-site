@@ -1,7 +1,10 @@
 import { LegalLayout } from '../components/LegalLayout'
 import { LEGAL } from '../config/content'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export function Terms() {
+  usePageMeta('Terms of Service', 'The terms that govern your use of the Gawvestor website.')
+
   return (
     <LegalLayout title="Terms of Service">
       {LEGAL.terms.map((section) => (

@@ -40,6 +40,13 @@ export function ContactForm({ source }: ContactFormProps) {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    // Honeypot: bots fill every field, humans never see this one.
+    const gotcha = (e.currentTarget as HTMLFormElement).elements.namedItem('_gotcha')
+    if (gotcha instanceof HTMLInputElement && gotcha.value) {
+      setStatus('success')
+      setForm(initialForm)
+      return
+    }
     setStatus('submitting')
     const result = await submitContactForm(form, source)
     if (result.success) {
@@ -53,6 +60,14 @@ export function ContactForm({ source }: ContactFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div>
         <label htmlFor="name" className={labelClass}>
           Name
@@ -140,12 +155,16 @@ export function ContactForm({ source }: ContactFormProps) {
         <Button type="submit" disabled={status === 'submitting'}>
           {status === 'submitting' ? 'Sending…' : 'Send message'}
         </Button>
-        {status === 'success' && (
-          <p className="text-sm text-green-700">Thanks, I'll get back to you soon.</p>
-        )}
-        {status === 'error' && (
-          <p className="text-sm text-red-600">{errorMessage || 'Something went wrong. Please try again.'}</p>
-        )}
+        <p aria-live="polite" className="text-sm">
+          {status === 'success' && (
+            <span className="text-green-700">Thanks, I'll get back to you soon.</span>
+          )}
+          {status === 'error' && (
+            <span className="text-red-600">
+              {errorMessage || 'Something went wrong. Please try again.'}
+            </span>
+          )}
+        </p>
       </div>
     </form>
   )
