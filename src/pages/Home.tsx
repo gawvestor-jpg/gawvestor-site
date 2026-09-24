@@ -1,6 +1,8 @@
 import { Hero } from '../components/Hero'
-import { CommunitySection } from '../components/CommunitySection'
-import { HelpSection } from '../components/HelpSection'
+import { FeaturedSection } from '../components/FeaturedSection'
+import { AboutSection } from '../components/AboutSection'
+import { ResourcesSection } from '../components/ResourcesSection'
+import { WorkWithSection } from '../components/WorkWithSection'
 import { Footer } from '../components/Footer'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -11,10 +13,12 @@ export function Home() {
     <>
       <main>
         <Hero />
-        <CommunitySection />
-        <HelpSection />
-        <Footer />
+        <FeaturedSection />
+        <AboutSection />
+        <ResourcesSection />
+        <WorkWithSection />
       </main>
+      <Footer />
     </>
   )
 }

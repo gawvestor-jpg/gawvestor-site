@@ -202,3 +202,34 @@ export function BoltIcon({ className = '' }: IconProps) {
     </svg>
   )
 }
+
+export function PlayIcon({ className = '' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8.5 5.9v12.2c0 .8.9 1.3 1.6.9l9.6-6.1c.6-.4.6-1.4 0-1.8L10.1 5c-.7-.4-1.6.1-1.6.9z" />
+    </svg>
+  )
+}
+
+export function ArrowUpRightIcon({ className = '' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 17 17 7" />
+      <path d="M9 7h8v8" />
+    </svg>
+  )
+}

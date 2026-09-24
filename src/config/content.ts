@@ -31,45 +31,65 @@ export const SOCIAL_LINKS = [
   },
 ] as const
 
-// The only Discord tile on the site. It points at the Wealth Collective
-// community, not a server we run, so the affiliate disclosure in the
-// description is the sole disclosure — keep it in that copy.
-export const AFFILIATE_COMMUNITY = {
-  label: 'Discord',
-  description:
-    "A trading community I'm part of — trade alerts, market chat, and analysis. (Paid membership, affiliate link.)",
-  href: 'https://discord.gg/dHwmR6Ktw2',
+// Hand-picked pieces, newest-best first. Swap the placeholder entries for
+// real links + hooks as content ships; thumbnails are optional imports —
+// when `thumbnail` is undefined the card renders a styled placeholder.
+export const FEATURED = {
+  eyebrow: 'Featured',
+  heading: 'Recent breakdowns',
+  items: [
+    {
+      category: 'Markets',
+      title: 'Placeholder — What this week’s market move actually means',
+      platform: 'TikTok',
+      href: 'https://www.tiktok.com/@gawvestor',
+    },
+    {
+      category: 'Technology',
+      title: 'Placeholder — The chip supply chain, explained in 60 seconds',
+      platform: 'TikTok',
+      href: 'https://www.tiktok.com/@gawvestor',
+    },
+    {
+      category: 'Personal Finance',
+      title: 'Placeholder — The first account to open before you invest',
+      platform: 'YouTube',
+      href: 'https://www.youtube.com/@gawvestor',
+    },
+  ],
 } as const
 
-export const HELP_LINKS = [
-  {
-    label: 'Contact',
-    hook: 'General questions',
-    description: 'I personally respond, reach out with anything.',
-  },
-  {
-    label: 'Brand Partnerships',
-    hook: 'Brand & Outreach',
-    description:
-      'Sponsored content, affiliate partnerships, and collaborations relevant to finance, investing, and tech.',
-  },
-] as const
+export const ABOUT = {
+  eyebrow: 'About',
+  body: 'Gawvestor breaks down markets, tech, and money like a person — not a suit. Short, no-jargon explanations of what’s moving and what it means for your money, made for people who want to understand investing rather than be sold on it.',
+  pillars: ['Investing', 'Markets', 'Technology', 'Personal Finance'],
+} as const
 
-export const TOOLS = [
-  {
-    name: 'TradingView',
-    cta: 'Free real-time charts',
-    // Lead sentence kept short so the affiliate disclosure always fits on the tile.
-    description:
-      'Real-time charts I use to track stocks and trends. Affiliate link — I may earn a commission.',
-    href: 'https://www.tradingview.com/?aff_id=168754',
-  },
-] as const
+export const RESOURCES = {
+  eyebrow: 'Resources',
+  heading: 'What I actually use',
+  // Footnote covers affiliate disclosure for every item in this list.
+  disclosure: 'Some links are affiliate links — I may earn a commission at no extra cost to you.',
+  items: [
+    {
+      name: 'TradingView',
+      description: 'Real-time charts and market analysis. Free tier covers everything I show on camera.',
+      href: 'https://www.tradingview.com/?aff_id=168754',
+    },
+  ],
+} as const
+
+export const WORK_WITH = {
+  eyebrow: 'Partnerships',
+  heading: 'Work With Gawvestor',
+  body: 'Sponsored content, affiliate partnerships, and creator collaborations across finance, investing, technology, and personal finance.',
+  cta: 'Work Together',
+  note: 'Media kit available on request.',
+} as const
 
 export const NEWSLETTER = {
   heading: 'Stay in the loop',
-  subheading:
-    'Market breakdowns and updates, straight to your inbox. No spam, unsubscribe anytime.',
+  subheading: 'Occasional market breakdowns by email. No spam, unsubscribe anytime.',
 } as const
 
 export const CONTACT = {
@@ -108,8 +128,7 @@ export const LEGAL = {
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
-    'Some links on this site (such as TradingView and the Discord trading community) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
-    'The Discord community linked from this site is a paid third-party community operated by an independent partner, not by Brandon Gaw. Brandon Gaw does not run that server, and does not control its content, alerts, or membership terms.',
+    'Some links on this site (such as TradingView) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
   ],
   privacy: [
     {
