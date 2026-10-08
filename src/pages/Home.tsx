@@ -57,10 +57,9 @@ export function Home() {
 
         <header className="mt-6 text-center">
           <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-[3px] border-[#a9cbef] shadow-[0_0_0_6px_rgba(169,203,239,0.12)]">
-            <img src={headshot} alt="Brandon, creator of Gawvestor" className="h-full w-full object-cover" />
+            <img src={headshot} alt="Gawvestor" className="h-full w-full object-cover" />
           </div>
-          <p className="mt-4 text-[10px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">Hey, I'm Brandon</p>
-          <h1 className="mt-2 text-[52px] font-[750] leading-none tracking-[-2.6px] sm:text-[70px] sm:tracking-[-3.5px]">
+          <h1 className="mt-5 text-[52px] font-[750] leading-none tracking-[-2.6px] sm:text-[70px] sm:tracking-[-3.5px]">
             Gawvestor<span className="text-[#a6c7fc]">.</span>
           </h1>
           <p className="mt-4 text-[17px] tracking-[-0.3px] text-[#e1e8f4] sm:text-[19px]">
