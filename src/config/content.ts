@@ -87,7 +87,7 @@ export const LEGAL = {
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
     'Viewers should consult a licensed professional before making investment decisions.',
     'Any stocks, companies, or investments mentioned are not recommendations to buy or sell.',
-    'Some links on this site (such as TradingView) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
+    'Some links on this site (such as Money.com offers) are affiliate links. Brandon Gaw may earn a commission if you sign up through them, at no extra cost to you.',
   ],
   privacy: [
     {

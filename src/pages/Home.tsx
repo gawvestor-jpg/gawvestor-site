@@ -7,9 +7,9 @@ import headshot from '../assets/headshot.jpg'
 
 const LINKS = [
   {
-    source: 'Money.com',
+    source: 'Money.com · Brokerage',
     title: 'Compare brokerage accounts',
-    body: 'Explore brokerage options and find the fit for you.',
+    body: 'Find a brokerage that fits how you invest.',
     cta: 'Explore options',
     note: 'Affiliate link',
     href: 'https://secure.money.com/pr/q43d3ae1ac80',
@@ -25,16 +25,6 @@ const LINKS = [
     href: 'https://discord.gg/dHwmR6Ktw2',
     variant: 'violet',
     Icon: DiscordIcon,
-  },
-  {
-    source: 'TradingView',
-    title: 'The charts I use',
-    body: 'Follow stocks, build watchlists, and see the bigger picture.',
-    cta: 'Explore TradingView',
-    note: 'Affiliate link',
-    href: 'https://www.tradingview.com/?aff_id=168754',
-    variant: 'dark',
-    Icon: ChartIcon,
   },
 ] as const
 
