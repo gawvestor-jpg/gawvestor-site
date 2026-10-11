@@ -7,15 +7,15 @@ import headshot from '../assets/headshot.jpg'
 
 const LINKS = [
   {
-    source: 'Money.com',
-    title: 'Compare brokerages',
+    source: 'Compare brokerage accounts',
+    title: 'Start investing',
     note: 'Affiliate',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
     variant: 'light',
     Icon: ChartIcon,
   },
   {
-    source: 'Money.com',
+    source: 'Invest for retirement',
     title: 'Open an IRA',
     note: 'Affiliate',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
@@ -23,9 +23,9 @@ const LINKS = [
     Icon: ChartIcon,
   },
   {
-    source: 'The Wealth Collective',
-    title: 'Join the Discord',
-    note: 'Paid · Affiliate',
+    source: 'The Wealth Collective Discord',
+    title: 'Talk stocks every day',
+    note: 'Affiliate',
     href: 'https://discord.gg/dHwmR6Ktw2',
     variant: 'violet',
     Icon: DiscordIcon,
