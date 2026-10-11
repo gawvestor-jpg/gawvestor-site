@@ -7,21 +7,17 @@ import headshot from '../assets/headshot.jpg'
 
 const LINKS = [
   {
-    source: 'Money.com · Brokerage',
-    title: 'Compare brokerage accounts',
-    body: 'Find a brokerage that fits how you invest.',
-    cta: 'Explore options',
-    note: 'Affiliate link',
+    source: 'Money.com',
+    title: 'Compare brokerages',
+    note: 'Affiliate',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
     variant: 'light',
     Icon: ChartIcon,
   },
   {
-    source: 'Money.com · Retirement',
+    source: 'Money.com',
     title: 'Open an IRA',
-    body: 'Compare IRA options and start investing for later.',
-    cta: 'Compare IRAs',
-    note: 'Affiliate link',
+    note: 'Affiliate',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
     variant: 'dark',
     Icon: ChartIcon,
@@ -29,9 +25,7 @@ const LINKS = [
   {
     source: 'The Wealth Collective',
     title: 'Join the Discord',
-    body: 'Keep the market conversation going in a partner trading community.',
-    cta: 'View community',
-    note: 'Paid partner community · Affiliate',
+    note: 'Paid · Affiliate',
     href: 'https://discord.gg/dHwmR6Ktw2',
     variant: 'violet',
     Icon: DiscordIcon,
@@ -85,49 +79,43 @@ export function Home() {
           </div>
         </header>
 
-        <section className="mt-12" aria-labelledby="links-heading">
+        <section className="mt-9" aria-labelledby="links-heading">
           <h2 id="links-heading" className="text-[14px] font-semibold tracking-[-0.2px] text-[#e7edf9]">
             From the videos. Right here.
           </h2>
           <div className="mt-3 grid gap-3">
-            {LINKS.map(({ source, title, body, cta, note, href, variant, Icon }) => {
+            {LINKS.map(({ source, title, note, href, variant, Icon }) => {
               const isLight = variant === 'light'
+              const muted = isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'
               return (
                 <a
                   key={title}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className={`group block rounded-[19px] border px-6 py-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-7 sm:py-6 ${CARD_STYLES[variant]}`}
+                  className={`group flex min-h-[64px] items-center gap-3.5 rounded-[18px] border px-4 py-3 transition-colors active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5 ${CARD_STYLES[variant]}`}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className={`flex h-7 w-7 items-center justify-center rounded-[9px] border ${
-                          isLight ? 'border-[#213f69]/20 text-[#274979]' : 'border-white/15 text-[#c7d6f5]'
-                        }`}
-                      >
-                        <Icon className="h-4 w-4" />
-                      </span>
-                      <span className="text-[9px] font-[750] uppercase tracking-[1.3px]">{source}</span>
-                    </div>
-                    <ArrowUpRightIcon className="h-4 w-4 opacity-70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </div>
-                  <h3 className="mt-4 text-[21px] font-[650] tracking-[-0.8px] sm:text-[23px]">{title}</h3>
-                  <p className={`mt-1.5 text-[13px] ${isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'}`}>{body}</p>
-                  <div className="mt-4 flex items-center justify-between gap-3">
-                    <span className="text-[11px] font-bold">{cta} ↗</span>
-                    <span className={`text-right text-[9.5px] ${isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'}`}>
-                      {note}
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border ${
+                      isLight ? 'border-[#213f69]/20 text-[#274979]' : 'border-white/15 text-[#c7d6f5]'
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[17px] font-[650] leading-tight tracking-[-0.4px]">{title}</span>
+                    <span className={`mt-0.5 block text-[11px] ${muted}`}>
+                      {source} · {note}
                     </span>
-                  </div>
+                  </span>
+                  <ArrowUpRightIcon className="h-5 w-5 shrink-0 opacity-70" />
                 </a>
               )
             })}
           </div>
           <p className="mt-4 px-1 text-[10.5px] leading-relaxed text-[#95a8c2]">
-            I may earn a commission through these links, at no extra cost to you. The Discord is run by an
-            independent partner; paid membership terms apply.
+            I may earn a commission from these links at no extra cost to you. The Discord is a paid
+            community run by an independent partner.
           </p>
         </section>
 
