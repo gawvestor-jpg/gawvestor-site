@@ -9,7 +9,7 @@ const LINKS = [
   {
     source: 'Compare brokerage accounts',
     title: 'Start investing',
-    note: 'Affiliate',
+    note: 'Paid link',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
     variant: 'light',
     Icon: ChartIcon,
@@ -17,7 +17,7 @@ const LINKS = [
   {
     source: 'Invest for retirement',
     title: 'Open an IRA',
-    note: 'Affiliate',
+    note: 'Paid link',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
     variant: 'dark',
     Icon: ChartIcon,
@@ -25,7 +25,7 @@ const LINKS = [
   {
     source: 'The Wealth Collective Discord',
     title: 'Talk stocks every day',
-    note: 'Affiliate',
+    note: 'Paid link',
     href: 'https://discord.gg/dHwmR6Ktw2',
     variant: 'violet',
     Icon: DiscordIcon,
@@ -113,10 +113,6 @@ export function Home() {
               )
             })}
           </div>
-          <p className="mt-4 px-1 text-[10.5px] leading-relaxed text-[#95a8c2]">
-            I may earn a commission from these links at no extra cost to you. The Discord is a paid
-            community run by an independent partner.
-          </p>
         </section>
 
         <section className="mt-8 border-t border-white/10 pt-7" aria-labelledby="work-heading">
