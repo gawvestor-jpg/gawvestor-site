@@ -2,30 +2,27 @@ import { useState } from 'react'
 import { BrandForm } from '../components/BrandForm'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { SOCIAL_LINKS, FOOTER } from '../config/content'
-import { ChartIcon, DiscordIcon, ArrowUpRightIcon, SOCIAL_ICONS } from '../components/ui/icons'
+import { ChartIcon, DiscordIcon, SproutIcon, ArrowUpRightIcon, SOCIAL_ICONS } from '../components/ui/icons'
 import headshot from '../assets/headshot.jpg'
 
 const LINKS = [
   {
-    source: 'Compare brokerage accounts',
-    title: 'Start investing',
-    note: 'Paid link',
+    title: 'Start investing today',
+    subtitle: 'Compare top brokerages',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
     variant: 'light',
     Icon: ChartIcon,
   },
   {
-    source: 'Invest for retirement',
     title: 'Open an IRA',
-    note: 'Paid link',
+    subtitle: 'Tax perks for future you',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
     variant: 'dark',
-    Icon: ChartIcon,
+    Icon: SproutIcon,
   },
   {
-    source: 'The Wealth Collective Discord',
-    title: 'Talk stocks every day',
-    note: 'Paid link',
+    title: 'Join me on Discord',
+    subtitle: 'Daily stock talk + community',
     href: 'https://discord.gg/dHwmR6Ktw2',
     variant: 'violet',
     Icon: DiscordIcon,
@@ -34,10 +31,16 @@ const LINKS = [
 
 const CARD_STYLES = {
   light:
-    'border-[#d5e3ff] bg-[linear-gradient(120deg,#c7dbff,#e4eaff)] text-[#152542] hover:border-white',
+    'border-[#d5e3ff] bg-[linear-gradient(120deg,#c7dbff,#e4eaff)] text-[#152542] shadow-[0_10px_30px_-12px_rgba(166,199,252,0.55)] hover:border-white hover:shadow-[0_14px_36px_-12px_rgba(166,199,252,0.75)]',
   violet:
-    'border-[#35445d] bg-[linear-gradient(120deg,#242a50,#232b42)] text-[#f0f4fb] hover:border-[#4b5d7d]',
-  dark: 'border-[#35445d] bg-[#18253a] text-[#f0f4fb] hover:border-[#4b5d7d]',
+    'border-[#4a4f8a] bg-[linear-gradient(120deg,#2d3166,#232b42)] text-[#f0f4fb] hover:border-[#7076c9]',
+  dark: 'border-[#35445d] bg-[linear-gradient(120deg,#1c2c45,#18253a)] text-[#f0f4fb] hover:border-[#5f7aa3]',
+} as const
+
+const BADGE_STYLES = {
+  light: 'bg-[#152542] text-[#c7dbff]',
+  violet: 'bg-[#5865f2] text-white',
+  dark: 'bg-[#2f6b4f] text-[#d6f5e3]',
 } as const
 
 export function Home() {
@@ -80,11 +83,11 @@ export function Home() {
         </header>
 
         <section className="mt-9" aria-labelledby="links-heading">
-          <h2 id="links-heading" className="text-[14px] font-semibold tracking-[-0.2px] text-[#e7edf9]">
-            From the videos. Right here.
+          <h2 id="links-heading" className="text-[20px] font-bold tracking-[-0.5px] text-white">
+            Your next move<span className="text-[#a6c7fc]">.</span>
           </h2>
-          <div className="mt-3 grid gap-3">
-            {LINKS.map(({ source, title, note, href, variant, Icon }) => {
+          <div className="mt-3.5 grid gap-3">
+            {LINKS.map(({ subtitle, title, href, variant, Icon }) => {
               const isLight = variant === 'light'
               const muted = isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'
               return (
@@ -93,26 +96,32 @@ export function Home() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className={`group flex min-h-[64px] items-center gap-3.5 rounded-[18px] border px-4 py-3 transition-colors active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5 ${CARD_STYLES[variant]}`}
+                  className={`group relative flex min-h-[76px] items-center gap-4 overflow-hidden rounded-[20px] border px-4 py-3.5 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5 ${CARD_STYLES[variant]}`}
                 >
+                  {isLight && <span aria-hidden="true" className="card-shine" />}
                   <span
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border ${
-                      isLight ? 'border-[#213f69]/20 text-[#274979]' : 'border-white/15 text-[#c7d6f5]'
-                    }`}
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] ${BADGE_STYLES[variant]}`}
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-[22px] w-[22px]" />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[17px] font-[650] leading-tight tracking-[-0.4px]">{title}</span>
-                    <span className={`mt-0.5 block text-[11px] ${muted}`}>
-                      {source} · {note}
-                    </span>
+                    <span className="block text-[18px] font-[700] leading-tight tracking-[-0.5px]">{title}</span>
+                    <span className={`mt-1 block text-[12.5px] leading-snug ${muted}`}>{subtitle}</span>
                   </span>
-                  <ArrowUpRightIcon className="h-5 w-5 shrink-0 opacity-70" />
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
+                      isLight ? 'bg-[#152542]/10' : 'bg-white/10'
+                    }`}
+                  >
+                    <ArrowUpRightIcon className="h-4 w-4" />
+                  </span>
                 </a>
               )
             })}
           </div>
+          <p className="mt-3 text-center text-[10.5px] text-[#95a8c2]">
+            Some links earn me a commission at no cost to you.
+          </p>
         </section>
 
         <section className="mt-8 border-t border-white/10 pt-7" aria-labelledby="work-heading">

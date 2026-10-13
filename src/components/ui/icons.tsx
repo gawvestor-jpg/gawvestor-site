@@ -186,6 +186,26 @@ export function ChartIcon({ className = '' }: IconProps) {
   )
 }
 
+export function SproutIcon({ className = '' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M12 21v-9" />
+      <path d="M12 12c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" />
+      <path d="M12 14.5c0-3-2.3-5-5.5-5 0 3 2.3 5 5.5 5z" />
+      <path d="M8 21h8" />
+    </svg>
+  )
+}
+
 export function BoltIcon({ className = '' }: IconProps) {
   return (
     <svg

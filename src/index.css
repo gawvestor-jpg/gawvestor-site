@@ -34,3 +34,29 @@ html {
     animation: none;
   }
 }
+
+/* Link hub: a slow light sweep across the primary card to draw the eye. */
+@keyframes card-shine {
+  0%, 70% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+
+.card-shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 35%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: card-shine 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-shine {
+    animation: none;
+    display: none;
+  }
+}

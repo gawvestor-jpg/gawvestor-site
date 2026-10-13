@@ -68,7 +68,7 @@ export const FOOTER = {
   email: 'hello@gawvestor.com',
   copyrightName: 'Gawvestor',
   disclaimerNote:
-    "Content on this site is for educational and entertainment purposes only and isn't financial advice. Links marked “Paid link” earn me a commission at no extra cost to you. The Discord is a paid community run by an independent partner.",
+    "Content on this site is for educational and entertainment purposes only and isn't financial advice. Some links on this page are affiliate links that earn me a commission at no extra cost to you. The Discord is a paid community run by an independent partner.",
   links: [
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms', href: '/terms' },
