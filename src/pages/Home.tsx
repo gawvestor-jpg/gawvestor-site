@@ -87,6 +87,29 @@ export function Home() {
             Your next move<span className="text-[#a6c7fc]">.</span>
           </h2>
           <div className="mt-3.5 grid gap-3">
+            <a
+              href="/sie/"
+              className="group relative flex min-h-[84px] items-center gap-4 overflow-hidden rounded-[20px] border border-[#3f8f6a] bg-[linear-gradient(120deg,#1f5a43,#173a33)] px-4 py-3.5 text-[#f0f4fb] shadow-[0_10px_30px_-12px_rgba(63,143,106,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#6cc59a] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#d6f5e3] text-[#1f5a43]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[22px] w-[22px]" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z" />
+                  <path d="m9 9 2 2 4-4" />
+                </svg>
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="flex items-center gap-2">
+                  <span className="block text-[18px] font-[700] leading-tight tracking-[-0.5px]">Free SIE Exam Prep</span>
+                  <span className="rounded-full bg-[#d6f5e3] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#1f5a43]">Free</span>
+                </span>
+                <span className="mt-1 block text-[12.5px] leading-snug text-[#c9e8d8]">
+                  Lessons, practice questions &amp; timed exams. No signup.
+                </span>
+              </span>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <ArrowUpRightIcon className="h-4 w-4" />
+              </span>
+            </a>
             {LINKS.map(({ subtitle, title, href, variant, Icon }) => {
               const isLight = variant === 'light'
               const muted = isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'
