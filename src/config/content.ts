@@ -44,6 +44,11 @@ export const RESOURCES = {
   disclosure: 'Some links are affiliate links — I may earn a commission at no extra cost to you.',
   items: [
     {
+      name: 'Free SIE Exam Prep',
+      description: 'The study tool I built for my SIE: lessons, adaptive practice, flashcards, and timed 75-question exams. Free, no signup.',
+      href: '/sie/',
+    },
+    {
       name: 'TradingView',
       description: 'Real-time charts and market analysis. Free tier covers everything I show on camera.',
       href: 'https://www.tradingview.com/?aff_id=168754',
