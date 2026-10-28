@@ -12,6 +12,7 @@ const LINKS = [
     title: 'Open a brokerage account',
     subtitle: 'Compare the top apps side by side',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
+    track: 'brokerage',
     variant: 'light',
     Icon: ChartIcon,
   },
@@ -19,6 +20,7 @@ const LINKS = [
     title: 'Open an IRA',
     subtitle: 'Tax perks that help your money grow',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
+    track: 'ira',
     variant: 'dark',
     Icon: SproutIcon,
   },
@@ -26,6 +28,7 @@ const LINKS = [
     title: 'Join me on Discord',
     subtitle: 'Daily stock talk + community',
     href: 'https://discord.gg/dHwmR6Ktw2',
+    track: 'discord',
     variant: 'violet',
     Icon: DiscordIcon,
   },
@@ -80,6 +83,7 @@ export function Home() {
                 <a
                   key={link.label}
                   href={link.href}
+                  data-track={link.label.toLowerCase()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 text-[12.5px] sm:px-4 sm:text-[13px] font-semibold text-white transition-colors hover:bg-white/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
@@ -102,6 +106,7 @@ export function Home() {
           <div className="mt-3.5 grid gap-3">
             <a
               href="/sie/"
+              data-track="sie"
               className="group relative flex min-h-[84px] items-center gap-4 overflow-hidden rounded-[20px] border border-[#3f8f6a] bg-[linear-gradient(120deg,#1f5a43,#173a33)] px-4 py-3.5 text-[#f0f4fb] shadow-[0_10px_30px_-12px_rgba(63,143,106,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#6cc59a] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5"
             >
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#d6f5e3] text-[#1f5a43]">
@@ -123,13 +128,14 @@ export function Home() {
                 <ArrowUpRightIcon className="h-4 w-4" />
               </span>
             </a>
-            {LINKS.map(({ subtitle, title, href, variant, Icon }) => {
+            {LINKS.map(({ subtitle, title, href, variant, Icon, track }) => {
               const isLight = variant === 'light'
               const muted = isLight ? 'text-[#3a506f]' : 'text-[#c9d4e6]'
               return (
                 <a
                   key={title}
                   href={href}
+                  data-track={track}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className={`group relative flex min-h-[76px] items-center gap-4 overflow-hidden rounded-[20px] border px-4 py-3.5 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5 ${CARD_STYLES[variant]}`}
@@ -163,6 +169,7 @@ export function Home() {
         <section className="mt-9" aria-labelledby="press-heading">
           <a
             href={PRESS.href}
+            data-track="reuters"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-5 py-5 transition-colors hover:border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-6"
@@ -196,6 +203,7 @@ export function Home() {
             </h2>
             <a
               href="https://www.tiktok.com/@gawvestor"
+              data-track="videos-all"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[11.5px] font-semibold text-[#c9d4e6] hover:text-white"
@@ -204,10 +212,11 @@ export function Home() {
             </a>
           </div>
           <div className="mt-3 grid gap-2">
-            {TOP_VIDEOS.slice(0, 3).map((v) => (
+            {TOP_VIDEOS.slice(0, 3).map((v, i) => (
               <a
                 key={v.href}
                 href={v.href}
+                data-track={`video-${i + 1}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex min-w-0 items-center gap-3 rounded-[14px] border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
@@ -232,6 +241,7 @@ export function Home() {
           <button
             type="button"
             aria-expanded={formOpen}
+            data-track="work-with-me"
             onClick={() => setFormOpen((open) => !open)}
             className="mt-5 flex min-h-11 w-full items-center justify-between rounded-[11px] border border-[#35445d] bg-[#1b2740] px-4 text-[12.5px] font-bold text-white transition-colors hover:border-[#4b5d7d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
           >
@@ -249,6 +259,7 @@ export function Home() {
 
           <a
             href="/mediakit"
+            data-track="mediakit"
             className="mt-3 flex min-h-11 w-full items-center justify-between rounded-[11px] border border-[#35445d] bg-transparent px-4 text-[12.5px] font-bold text-white transition-colors hover:border-[#4b5d7d] hover:bg-[#1b2740] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
           >
             View media kit
@@ -257,6 +268,7 @@ export function Home() {
 
           <a
             href={`mailto:${FOOTER.email}`}
+            data-track="email"
             className="mt-6 inline-block text-[11.5px] text-[#c9d4e6] hover:text-white"
           >
             {FOOTER.email} ↗

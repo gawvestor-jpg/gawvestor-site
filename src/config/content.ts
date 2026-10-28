@@ -86,7 +86,7 @@ export const LEGAL = {
   // attorney. It's reasonable boilerplate for an educational finance creator,
   // but get it reviewed once paid 1:1 calls and brand deals are running —
   // especially the FTC/SEC/FINRA-facing disclosure language.
-  lastUpdated: 'August 12, 2026',
+  lastUpdated: 'October 28, 2026',
   disclaimer: [
     'Brandon Gaw is a content creator and is not a registered investment advisor, broker-dealer, or financial planner.',
     'Content on this site and associated social media is for educational and entertainment purposes only and does not constitute financial, investment, tax, or legal advice.',
@@ -102,6 +102,10 @@ export const LEGAL = {
     {
       heading: 'Cookies',
       body: 'This site may use cookies or similar local storage technologies to remember basic preferences and to understand how visitors use the site. You can disable cookies in your browser settings; doing so may affect some site functionality.',
+    },
+    {
+      heading: 'Analytics',
+      body: 'We use Cloudflare Web Analytics, which counts page visits without cookies or cross-site tracking. We also keep an anonymous tally of which links on this site get tapped (for example, how many times the Discord card was opened). These counts are not tied to you, your IP address, or any identifier.',
     },
     {
       heading: 'How we use your information',

@@ -194,6 +194,7 @@ export function MediaKit() {
           <p className="mt-1.5 text-[13px] text-[#3a506f]">Rates and full analytics on request.</p>
           <a
             href={`mailto:${FOOTER.email}?subject=Partnership%20inquiry`}
+            data-track="mediakit-email"
             className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#152542] px-6 text-[13px] font-bold text-white hover:bg-[#1f3560]"
           >
             {FOOTER.email}
