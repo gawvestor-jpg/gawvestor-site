@@ -11,23 +11,22 @@ export const PRESS = {
   date: 'Oct 22, 2026',
   href: 'https://www.reuters.com/markets/on-the-money/ahead-us-midterms-gen-z-investors-are-making-portfolio-changes-2026-10-22/',
   blurb: 'Featured in Reuters on how Gen Z investors are handling the midterms.',
+  // Brandon's own line, as quoted by Reuters in its post about the story.
+  quote: "When others are fearful, that's the best time to invest.",
 } as const
 
-// Read from each public profile on Oct 28, 2026.
-export const METRICS_AS_OF = 'Oct 2026'
-
+// Follower counts are live: see functions/api/stats.js and src/hooks/useStats.ts.
 export const PLATFORMS = [
-  { label: 'TikTok', handle: '@gawvestor', followers: '24.1K', extra: '218K likes', href: 'https://www.tiktok.com/@gawvestor' },
-  { label: 'Instagram', handle: '@gawvestor', followers: '1.5K', extra: '36 posts', href: 'https://www.instagram.com/gawvestor' },
-  { label: 'YouTube', handle: '@gawvestor', followers: '324', extra: '74 Shorts', href: 'https://www.youtube.com/@gawvestor' },
+  { key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@gawvestor' },
+  { key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/gawvestor' },
+  { key: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@gawvestor' },
 ] as const
 
-// Headline stats. Keep these sums honest: 24.1K + 1.5K + 324 ≈ 26K.
-export const HEADLINE_STATS = [
-  { value: '26K+', label: 'Followers across platforms' },
+// Video view numbers: TikTok profile sorted by Popular, read Oct 28, 2026.
+// Top 8 combined = 1,991.3K views.
+export const VIDEO_STATS = [
   { value: '1.9M+', label: 'Views on top 8 videos' },
-  { value: '543K', label: 'Views on best video' },
-  { value: '218K', label: 'TikTok likes' },
+  { value: '543K+', label: 'Views on best video' },
 ] as const
 
 // From TikTok Studio analytics, Aug 2026.

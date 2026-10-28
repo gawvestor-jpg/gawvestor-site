@@ -5,6 +5,7 @@ import { SOCIAL_LINKS, FOOTER } from '../config/content'
 import { PRESS, TOP_VIDEOS } from '../config/mediakit'
 import { ChartIcon, DiscordIcon, SproutIcon, ArrowUpRightIcon, PlayIcon, SOCIAL_ICONS } from '../components/ui/icons'
 import headshot from '../assets/headshot.jpg'
+import { useStats, floorK } from '../hooks/useStats'
 
 const LINKS = [
   {
@@ -47,27 +48,32 @@ const BADGE_STYLES = {
 export function Home() {
   usePageMeta()
   const [formOpen, setFormOpen] = useState(false)
+  const stats = useStats()
 
   return (
     <div className="min-h-screen bg-[#0c1424] bg-[radial-gradient(at_50%_0%,#213752_0px,transparent_47%)] font-sans text-[#f4f6fc] antialiased">
-      <main className="mx-auto max-w-[680px] px-5 pb-10 pt-6 sm:px-[42px]">
-        <p className="text-[9px] font-bold uppercase tracking-[1.5px] text-[#e7edf9]">Gawvestor</p>
+      <main className="mx-auto max-w-[680px] px-5 pb-10 pt-6 sm:px-[42px] lg:grid lg:max-w-[1120px] lg:grid-cols-[360px_minmax(0,1fr)] lg:gap-16 lg:px-10 lg:pt-14">
+        <p className="text-[9px] font-bold uppercase tracking-[1.5px] text-[#e7edf9] lg:hidden">Gawvestor</p>
 
-        <header className="mt-6 text-center">
-          <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-[3px] border-[#a9cbef] shadow-[0_0_0_6px_rgba(169,203,239,0.12)]">
+        <header className="mt-6 text-center lg:sticky lg:top-14 lg:mt-0 lg:self-start lg:text-left">
+          <div className="mx-auto h-28 w-28 overflow-hidden lg:mx-0 lg:h-32 lg:w-32 rounded-full border-[3px] border-[#a9cbef] shadow-[0_0_0_6px_rgba(169,203,239,0.12)]">
             <img src={headshot} alt="Gawvestor" className="h-full w-full object-cover" />
           </div>
-          <h1 className="mt-5 text-[52px] font-[750] leading-none tracking-[-2.6px] sm:text-[70px] sm:tracking-[-3.5px]">
+          <h1 className="mt-5 text-[52px] font-[750] leading-none tracking-[-2.6px] sm:text-[70px] sm:tracking-[-3.5px] lg:text-[64px]">
             Gawvestor<span className="text-[#a6c7fc]">.</span>
           </h1>
           <p className="mt-4 text-[17px] tracking-[-0.3px] text-[#e1e8f4] sm:text-[19px]">
             Stocks, tech &amp; personal finance
           </p>
-          <p className="mt-2 text-[12.5px] text-[#95a8c2]">
-            Join <span className="font-semibold text-white">24K+</span> people learning to invest on TikTok
+          <p className="mt-2 text-[12.5px] text-[#95a8c2] lg:text-[13px]">
+            Join <span className="font-semibold text-white">{floorK(stats.tiktok)}</span> people learning to invest on TikTok
+          </p>
+          <p className="mt-6 hidden max-w-[330px] text-[14.5px] leading-relaxed text-[#c9d4e6] lg:block">
+            Hey, I'm Brandon. I spent a year working in the chip industry, and now I break down stocks, tech and
+            money in plain English. Everything I use and recommend is on this page.
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 lg:justify-start">
             {SOCIAL_LINKS.map((link) => {
               const Icon = SOCIAL_ICONS[link.label]
               return (
@@ -87,7 +93,8 @@ export function Home() {
 
         </header>
 
-        <section className="mt-9" aria-labelledby="links-heading">
+        <div className="min-w-0">
+        <section className="mt-9 lg:mt-0" aria-labelledby="links-heading">
           <h2 id="links-heading" className="text-[20px] font-bold tracking-[-0.5px] text-white">
             Start investing in minutes<span className="text-[#a6c7fc]">.</span>
           </h2>
@@ -154,25 +161,30 @@ export function Home() {
         </section>
 
         <section className="mt-9" aria-labelledby="press-heading">
-          <h2 id="press-heading" className="text-[11px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">
-            Featured in Reuters
-          </h2>
           <a
             href={PRESS.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-3 flex items-center gap-4 rounded-[18px] border border-white/10 bg-white/[0.04] px-4 py-4 transition-colors hover:border-white/25 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5"
+            className="group relative block overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-5 py-5 transition-colors hover:border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-6"
           >
-            <span className="min-w-0 flex-1">
-              <span className="block text-[16px] tracking-[-0.3px] font-semibold leading-snug text-white">
-                {PRESS.headline}
-              </span>
-              <span className="mt-1.5 block text-[11.5px] text-[#95a8c2]">
-                {PRESS.outlet} · {PRESS.date}
-              </span>
+            <span aria-hidden="true" className="pointer-events-none absolute -right-2 -top-8 select-none text-[140px] font-bold leading-none text-white/[0.04]">
+              ”
             </span>
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <ArrowUpRightIcon className="h-4 w-4" />
+            <span className="flex items-center justify-between">
+              <span id="press-heading" className="text-[10.5px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">
+                Featured in {PRESS.outlet}
+              </span>
+              <span className="text-[11px] text-[#95a8c2]">{PRESS.date}</span>
+            </span>
+            <span className="mt-3 block text-[19px] font-semibold leading-snug tracking-[-0.4px] text-white sm:text-[21px]">
+              “{PRESS.quote}”
+            </span>
+            <span className="mt-2.5 block text-[12.5px] leading-snug text-[#c9d4e6]">
+              What I told Reuters about investing through the midterms.
+            </span>
+            <span className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1.5 text-[12px] font-semibold text-white transition-colors group-hover:bg-white/15">
+              Read the story
+              <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </span>
           </a>
         </section>
@@ -250,9 +262,10 @@ export function Home() {
             {FOOTER.email} ↗
           </a>
         </section>
+        </div>
       </main>
 
-      <footer className="mx-auto max-w-[560px] border-t border-white/10 px-5 pb-10 pt-8 text-center">
+      <footer className="mx-auto max-w-[560px] lg:max-w-[1120px] border-t border-white/10 px-5 pb-10 pt-8 text-center">
         <p className="text-[22px] font-bold tracking-[-0.8px]">
           Gawvestor<span className="text-[#a6c7fc]">.</span>
         </p>

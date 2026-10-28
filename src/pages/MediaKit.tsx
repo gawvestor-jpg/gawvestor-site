@@ -2,9 +2,8 @@ import { usePageMeta } from '../hooks/usePageMeta'
 import { FOOTER } from '../config/content'
 import {
   PRESS,
-  METRICS_AS_OF,
   PLATFORMS,
-  HEADLINE_STATS,
+  VIDEO_STATS,
   AUDIENCE,
   TOP_VIDEOS,
   PARTNERS,
@@ -12,6 +11,7 @@ import {
 } from '../config/mediakit'
 import { SOCIAL_ICONS, ArrowUpRightIcon, PlayIcon } from '../components/ui/icons'
 import headshot from '../assets/headshot.jpg'
+import { useStats, floorK, compact } from '../hooks/useStats'
 
 const eyebrow = 'text-[10px] font-bold uppercase tracking-[2px] text-[#a9c9f2]'
 const h2 = 'mt-1.5 text-[22px] font-bold tracking-[-0.6px] text-white'
@@ -19,6 +19,14 @@ const card = 'rounded-[18px] border border-white/10 bg-white/[0.04]'
 
 export function MediaKit() {
   usePageMeta('Media Kit', 'Gawvestor media kit: audience, top videos, press, and partnership options.')
+  const stats = useStats()
+  const asOf = new Date(stats.asOf + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+  const headline = [
+    { value: floorK(stats.total), label: 'Followers across platforms' },
+    ...VIDEO_STATS,
+    { value: floorK(stats.tiktokLikes), label: 'TikTok likes' },
+  ]
+  const extra: Record<string, string> = { tiktok: `${floorK(stats.tiktokLikes)} likes`, instagram: 'Reels', youtube: 'Shorts' }
 
   return (
     <div className="min-h-screen bg-[#0c1424] bg-[radial-gradient(at_50%_0%,#213752_0px,transparent_47%)] font-sans text-[#f4f6fc] antialiased">
@@ -49,28 +57,30 @@ export function MediaKit() {
           href={PRESS.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-7 flex items-center gap-4 rounded-[18px] border border-white/10 bg-white/[0.04] px-4 py-3.5 transition-colors hover:border-white/25 sm:px-5"
+          className="group mt-7 block rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] px-5 py-5 transition-colors hover:border-white/25"
         >
-          <span className="shrink-0 border-r border-white/15 pr-4 text-[10px] font-bold uppercase leading-tight tracking-[1.5px] text-[#a9c9f2]">
-            Featured
-            <br />
-            in {PRESS.outlet}
-          </span>
-          <span className="min-w-0 flex-1">
-            <span className="block text-[15px] tracking-[-0.3px] font-semibold leading-snug text-white">{PRESS.headline}</span>
-            <span className="mt-0.5 block text-[11.5px] text-[#c9d4e6]">
-              By {PRESS.author} · {PRESS.date}
-            </span>
-          </span>
-          <ArrowUpRightIcon className="h-4 w-4 shrink-0 text-[#c9d4e6] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">Featured in {PRESS.outlet}</span>
+            <span className="text-[11px] text-[#95a8c2]">{PRESS.date}</span>
+          </div>
+          <p className="mt-3 text-[20px] font-semibold leading-snug tracking-[-0.5px] text-white">
+            <span className="text-[#a6c7fc]">“</span>
+            {PRESS.quote}
+            <span className="text-[#a6c7fc]">”</span>
+          </p>
+          <p className="mt-3 text-[12.5px] text-[#c9d4e6]">{PRESS.headline}</p>
+          <p className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-white">
+            Read the story
+            <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </p>
         </a>
 
         {/* Headline stats */}
         <section className="mt-9" aria-labelledby="stats-heading">
-          <p className={eyebrow}>By the numbers · {METRICS_AS_OF}</p>
+          <p className={eyebrow}>By the numbers · Live, {asOf}</p>
           <h2 id="stats-heading" className={h2}>Reach</h2>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {HEADLINE_STATS.map((s) => (
+            {headline.map((s) => (
               <div key={s.label} className={`${card} px-4 py-4`}>
                 <p className="text-[28px] font-[750] leading-none tracking-[-1px] text-[#a6c7fc]">{s.value}</p>
                 <p className="mt-2 text-[11.5px] leading-snug text-[#c9d4e6]">{s.label}</p>
@@ -93,9 +103,9 @@ export function MediaKit() {
                     {Icon && <Icon className="h-5 w-5" />}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[17px] font-bold leading-tight">{p.followers}</span>
+                    <span className="block text-[17px] font-bold leading-tight">{compact(stats[p.key])}</span>
                     <span className="block text-[11px] text-[#95a8c2]">
-                      {p.label} · {p.extra}
+                      {p.label} · {extra[p.key]}
                     </span>
                   </span>
                 </a>
@@ -192,7 +202,7 @@ export function MediaKit() {
         </section>
 
         <p className="mt-6 text-center text-[9.5px] leading-relaxed text-[#95a8c2]">
-          Metrics read from public profiles, {METRICS_AS_OF}. All content is educational and not financial advice.
+          Follower counts update automatically from public profiles. Video views as of Oct 2026. All content is educational and not financial advice.
           Sponsored content is always disclosed.
         </p>
       </main>
