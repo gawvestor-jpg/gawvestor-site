@@ -2,21 +2,21 @@ import { useState } from 'react'
 import { BrandForm } from '../components/BrandForm'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { SOCIAL_LINKS, FOOTER } from '../config/content'
-import { PRESS } from '../config/mediakit'
-import { ChartIcon, DiscordIcon, SproutIcon, ArrowUpRightIcon, SOCIAL_ICONS } from '../components/ui/icons'
+import { PRESS, TOP_VIDEOS } from '../config/mediakit'
+import { ChartIcon, DiscordIcon, SproutIcon, ArrowUpRightIcon, PlayIcon, SOCIAL_ICONS } from '../components/ui/icons'
 import headshot from '../assets/headshot.jpg'
 
 const LINKS = [
   {
-    title: 'Start investing today',
-    subtitle: 'Compare top brokerages',
+    title: 'Open a brokerage account',
+    subtitle: 'Compare the top apps side by side',
     href: 'https://secure.money.com/pr/q43d3ae1ac80?s1=site-brokerage',
     variant: 'light',
     Icon: ChartIcon,
   },
   {
     title: 'Open an IRA',
-    subtitle: 'Tax perks for future you',
+    subtitle: 'Tax perks that help your money grow',
     href: 'https://secure.money.com/pr/j9e3f8df762c?s1=site-ira',
     variant: 'dark',
     Icon: SproutIcon,
@@ -63,6 +63,9 @@ export function Home() {
           <p className="mt-4 text-[17px] tracking-[-0.3px] text-[#e1e8f4] sm:text-[19px]">
             Stocks, tech &amp; personal finance
           </p>
+          <p className="mt-2 text-[12.5px] text-[#95a8c2]">
+            Join <span className="font-semibold text-white">24K+</span> people learning to invest on TikTok
+          </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {SOCIAL_LINKS.map((link) => {
@@ -82,24 +85,13 @@ export function Home() {
             })}
           </div>
 
-          <a
-            href={PRESS.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mx-auto mt-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-[#ff8000]/40 bg-[#ff8000]/10 py-1.5 pl-1.5 pr-3.5 text-left transition-colors hover:border-[#ff8000]/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
-          >
-            <span className="shrink-0 rounded-full bg-[#ff8000] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.06em] text-white">
-              As seen in {PRESS.outlet}
-            </span>
-            <span className="truncate text-[12px] font-semibold text-[#ffe2c7]">Gen Z &amp; the midterms</span>
-            <ArrowUpRightIcon className="h-3.5 w-3.5 shrink-0 text-[#ffb070]" />
-          </a>
         </header>
 
         <section className="mt-9" aria-labelledby="links-heading">
           <h2 id="links-heading" className="text-[20px] font-bold tracking-[-0.5px] text-white">
-            Your next move<span className="text-[#a6c7fc]">.</span>
+            Start investing in minutes<span className="text-[#a6c7fc]">.</span>
           </h2>
+          <p className="mt-1 text-[12.5px] text-[#95a8c2]">Pick one and get set up today.</p>
           <div className="mt-3.5 grid gap-3">
             <a
               href="/sie/"
@@ -159,6 +151,63 @@ export function Home() {
           <p className="mt-3 text-center text-[10.5px] text-[#95a8c2]">
             Some links earn me a commission at no cost to you.
           </p>
+        </section>
+
+        <section className="mt-9" aria-labelledby="press-heading">
+          <h2 id="press-heading" className="text-[11px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">
+            Featured in Reuters
+          </h2>
+          <a
+            href={PRESS.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-3 flex items-center gap-4 rounded-[18px] border border-white/10 bg-white/[0.04] px-4 py-4 transition-colors hover:border-white/25 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc] sm:px-5"
+          >
+            <span className="min-w-0 flex-1">
+              <span className="block text-[16px] tracking-[-0.3px] font-semibold leading-snug text-white">
+                {PRESS.headline}
+              </span>
+              <span className="mt-1.5 block text-[11.5px] text-[#95a8c2]">
+                {PRESS.outlet} · {PRESS.date}
+              </span>
+            </span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <ArrowUpRightIcon className="h-4 w-4" />
+            </span>
+          </a>
+        </section>
+
+        <section className="mt-9" aria-labelledby="popular-heading">
+          <div className="flex items-baseline justify-between">
+            <h2 id="popular-heading" className="text-[11px] font-bold uppercase tracking-[2px] text-[#a9c9f2]">
+              Most watched
+            </h2>
+            <a
+              href="https://www.tiktok.com/@gawvestor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11.5px] font-semibold text-[#c9d4e6] hover:text-white"
+            >
+              See all ↗
+            </a>
+          </div>
+          <div className="mt-3 grid gap-2">
+            {TOP_VIDEOS.slice(0, 3).map((v) => (
+              <a
+                key={v.href}
+                href={v.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-w-0 items-center gap-3 rounded-[14px] border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10">
+                  <PlayIcon className="h-3 w-3" />
+                </span>
+                <span className="min-w-0 flex-1 truncate text-[14px] font-semibold">{v.title}</span>
+                <span className="shrink-0 text-[12px] font-semibold text-[#95a8c2]">{v.views}</span>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="mt-8 border-t border-white/10 pt-7" aria-labelledby="work-heading">

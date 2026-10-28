@@ -49,18 +49,20 @@ export function MediaKit() {
           href={PRESS.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-7 flex items-center gap-4 rounded-[18px] border border-[#ff8000]/40 bg-[linear-gradient(120deg,rgba(255,128,0,0.14),rgba(255,128,0,0.04))] px-4 py-3.5 transition-colors hover:border-[#ff8000]/70 sm:px-5"
+          className="group mt-7 flex items-center gap-4 rounded-[18px] border border-white/10 bg-white/[0.04] px-4 py-3.5 transition-colors hover:border-white/25 sm:px-5"
         >
-          <span className="shrink-0 rounded-md bg-[#ff8000] px-2 py-1 text-[11px] font-extrabold uppercase tracking-[0.06em] text-white">
-            {PRESS.outlet}
+          <span className="shrink-0 border-r border-white/15 pr-4 text-[10px] font-bold uppercase leading-tight tracking-[1.5px] text-[#a9c9f2]">
+            Featured
+            <br />
+            in {PRESS.outlet}
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-[14.5px] font-semibold leading-snug text-white">{PRESS.headline}</span>
+            <span className="block text-[15px] tracking-[-0.3px] font-semibold leading-snug text-white">{PRESS.headline}</span>
             <span className="mt-0.5 block text-[11.5px] text-[#c9d4e6]">
               By {PRESS.author} · {PRESS.date}
             </span>
           </span>
-          <ArrowUpRightIcon className="h-4 w-4 shrink-0 text-[#ffb070] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <ArrowUpRightIcon className="h-4 w-4 shrink-0 text-[#c9d4e6] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
 
         {/* Headline stats */}
