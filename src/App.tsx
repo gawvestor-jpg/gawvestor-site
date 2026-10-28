@@ -5,6 +5,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { Terms } from './pages/Terms'
 import { Disclaimer } from './pages/Disclaimer'
 import { NotFound } from './pages/NotFound'
+import { MediaKit } from './pages/MediaKit'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/mediakit" element={<MediaKit />} />
+        <Route path="/media-kit" element={<MediaKit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

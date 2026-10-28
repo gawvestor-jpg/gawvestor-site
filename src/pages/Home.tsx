@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrandForm } from '../components/BrandForm'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { SOCIAL_LINKS, FOOTER } from '../config/content'
+import { PRESS } from '../config/mediakit'
 import { ChartIcon, DiscordIcon, SproutIcon, ArrowUpRightIcon, SOCIAL_ICONS } from '../components/ui/icons'
 import headshot from '../assets/headshot.jpg'
 
@@ -80,6 +81,19 @@ export function Home() {
               )
             })}
           </div>
+
+          <a
+            href={PRESS.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mx-auto mt-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-[#ff8000]/40 bg-[#ff8000]/10 py-1.5 pl-1.5 pr-3.5 text-left transition-colors hover:border-[#ff8000]/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
+          >
+            <span className="shrink-0 rounded-full bg-[#ff8000] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.06em] text-white">
+              As seen in {PRESS.outlet}
+            </span>
+            <span className="truncate text-[12px] font-semibold text-[#ffe2c7]">Gen Z &amp; the midterms</span>
+            <ArrowUpRightIcon className="h-3.5 w-3.5 shrink-0 text-[#ffb070]" />
+          </a>
         </header>
 
         <section className="mt-9" aria-labelledby="links-heading">
@@ -171,6 +185,14 @@ export function Home() {
               <BrandForm />
             </div>
           )}
+
+          <a
+            href="/mediakit"
+            className="mt-3 flex min-h-11 w-full items-center justify-between rounded-[11px] border border-[#35445d] bg-transparent px-4 text-[12.5px] font-bold text-white transition-colors hover:border-[#4b5d7d] hover:bg-[#1b2740] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a6c7fc]"
+          >
+            View media kit
+            <ArrowUpRightIcon className="h-4 w-4" />
+          </a>
 
           <a
             href={`mailto:${FOOTER.email}`}
