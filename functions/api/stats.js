@@ -16,7 +16,9 @@
 //   Optional  STATS_KV  KV namespace binding: lets the function store rotated
 //             TikTok/Instagram tokens so you never have to re-paste them.
 
-const FALLBACK = { tiktok: 24100, tiktokLikes: 218000, instagram: 1539, youtube: 324, asOf: '2026-10-28' }
+// Hand-set floor. TikTok/IG aren't wired to their APIs yet, so bump these when
+// the real numbers grow. A stored last-good value never drags a number below this.
+const FALLBACK = { tiktok: 26000, tiktokLikes: 218000, instagram: 1539, youtube: 324, asOf: '2026-11-23' }
 
 const FRESH_SECONDS = 6 * 60 * 60
 const LAST_GOOD_SECONDS = 30 * 24 * 60 * 60
@@ -119,7 +121,7 @@ export async function onRequestGet(context) {
   const { env } = context
   const cache = caches.default
   const origin = new URL(context.request.url).origin
-  const freshKey = new Request(`${origin}/__stats/fresh`)
+  const freshKey = new Request(`${origin}/__stats/fresh-v2`)
   const lastGoodKey = new Request(`${origin}/__stats/last-good`)
 
   const fresh = await cache.match(freshKey)
@@ -146,6 +148,10 @@ export async function onRequestGet(context) {
   }
 
   const merged = { ...FALLBACK, ...lastGood }
+  // Old last-good snapshots can hold a stale hand-set number; keep the higher one.
+  for (const [k, v] of Object.entries(FALLBACK)) {
+    if (typeof v === 'number' && !(merged[k] >= v)) merged[k] = v
+  }
   for (const [k, v] of Object.entries(live)) {
     if (typeof v === 'number' && v > 0) merged[k] = v
   }

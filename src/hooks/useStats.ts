@@ -12,15 +12,15 @@ export type Stats = {
 // Shown instantly and used if /api/stats can't be reached. Keep in sync with
 // FALLBACK in functions/api/stats.js.
 export const STATIC_STATS: Stats = {
-  tiktok: 24100,
+  tiktok: 26000,
   tiktokLikes: 218000,
   instagram: 1539,
   youtube: 324,
-  total: 24100 + 1539 + 324,
-  asOf: '2026-10-28',
+  total: 26000 + 1539 + 324,
+  asOf: '2026-11-23',
 }
 
-const SESSION_KEY = 'gw-stats'
+const SESSION_KEY = 'gw-stats-v2'
 
 /** Always rounds DOWN so a public number is never higher than the real one. 24,960 -> "24K+". */
 export function floorK(n: number): string {
@@ -54,12 +54,13 @@ export function useStats(): Stats {
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
         if (cancelled || !data || typeof data.tiktok !== 'number') return
+        const tiktok = Math.max(data.tiktok, STATIC_STATS.tiktok)
         const next: Stats = {
-          tiktok: data.tiktok,
+          tiktok,
           tiktokLikes: data.tiktokLikes ?? STATIC_STATS.tiktokLikes,
           instagram: data.instagram ?? STATIC_STATS.instagram,
           youtube: data.youtube ?? STATIC_STATS.youtube,
-          total: data.total ?? data.tiktok + (data.instagram ?? 0) + (data.youtube ?? 0),
+          total: tiktok + (data.instagram ?? STATIC_STATS.instagram) + (data.youtube ?? STATIC_STATS.youtube),
           asOf: data.asOf ?? STATIC_STATS.asOf,
         }
         setStats(next)
